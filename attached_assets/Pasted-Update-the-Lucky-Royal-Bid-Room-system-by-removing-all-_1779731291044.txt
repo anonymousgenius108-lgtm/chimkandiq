@@ -1,0 +1,140 @@
+Update the “Lucky Royal Bid Room” system by removing all visible probability percentage displays from the user interface.
+
+HIDDEN PROBABILITY SYSTEM
+
+The winning probability/chance must remain completely hidden from users.
+
+Users should NOT see:
+
+* Exact win percentage
+* Drop rate
+* Probability numbers
+* Item chance analytics
+
+Remove:
+
+* “20% chance”
+* “Win probability”
+* “Chance percentage”
+* Any visible probability indicators
+
+Instead, the system should feel:
+
+* Exciting
+* Mystery-based
+* Premium
+* Gamified
+* Reward-driven
+
+LUCKY ROYAL EXPERIENCE
+
+Users only see:
+
+* Item preview
+* Entry cost
+* Spin button
+* Remaining time
+* Participants count
+* Creator name
+* Reward pool
+* Limited quantity
+* “Lucky Royal Exclusive” badge
+
+SPIN RESULT TYPES
+
+Users can:
+
+* Win full item
+* Win Quartz cashback
+* Win credits
+* Unlock discount coupons
+* Receive partial rewards
+* Get retry bonus
+
+CREATOR CONTROLS
+
+The room creator can still internally configure:
+
+* Probability logic
+* Reward distribution
+* Quantity limits
+* Entry pricing
+* Reward rarity
+
+But these values remain hidden from normal users.
+
+MYSTERY & FAIRNESS SYSTEM
+
+To maintain trust:
+
+* Use secure backend randomization
+* Prevent manipulation
+* Add anti-bot systems
+* Add cooldown timers
+* Add verified creator badges
+
+WINNER SYSTEM
+
+After users win:
+
+* Item automatically saves to:
+  Profile → Store → Lucky Royal Wins
+
+Users receive:
+
+* Animated win popup
+* Reward notification
+* Optional winner showcase
+
+SOCIAL SYSTEM
+
+Add:
+
+* Invite followers
+* Invite friends
+* Share room
+* Share to groups
+* Share to clubs
+
+Users can message:
+
+* Followers
+* Friends
+* Study groups
+* Clubs
+
+through in-app messaging system.
+
+ANTI-SPAM RULES
+
+Add:
+
+* Invite cooldowns
+* Daily invite limits
+* AI spam detection
+* Mute Lucky Royal invites
+* Block repeated invites
+
+UI/UX STYLE
+
+Lucky Royal should feel like:
+
+* Premium mystery reward system
+* Futuristic spin experience
+* Neon casino-style educational marketplace
+* Exciting but controlled
+
+Use:
+
+* Glow animations
+* Spin wheel effects
+* Particle effects
+* Reward reveal animations
+* Countdown timers
+* Floating reward cards
+
+FINAL EXPERIENCE
+
+Lucky Royal should feel like:
+
+“A mystery-based premium reward and auction system where users can discover, spin, compete, and unlock educational or creative assets inside a futuristic marketplace ecosystem.”

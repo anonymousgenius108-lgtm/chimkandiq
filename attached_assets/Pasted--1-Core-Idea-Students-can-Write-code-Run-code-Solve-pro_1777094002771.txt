@@ -1,0 +1,259 @@
+🎯 1. Core Idea
+
+👉 Students can:
+
+Write code
+Run code
+Solve problems
+Share solutions
+
+All inside EduConnect
+
+🧑‍💻 2. Online Code Editor (IDE)
+Features:
+Syntax highlighting
+Auto-complete
+Line numbers
+Dark/light theme
+Multi-language support:
+C, C++, Java, Python, JavaScript
+▶️ 3. Run & Compile System
+Run code instantly
+Show output
+Show errors (with line number)
+
+👉 Like:
+
+Compiler + Debugger
+🧪 4. Practice Problem Section
+Categories:
+Easy / Medium / Hard
+Topic-based:
+Arrays
+Strings
+DSA
+Algorithms
+🧠 5. Smart Problem System
+
+Each problem includes:
+
+Description
+Input/Output format
+Test cases
+Constraints
+📊 6. Submission System
+Submit solution
+Auto-check with test cases
+Show:
+Passed / Failed
+Execution time
+🏆 7. Coding Leaderboard
+Rank based on:
+Problems solved
+Accuracy
+Speed
+💬 8. Doubt + Discussion Integration
+
+Inside each problem:
+
+Ask doubt
+See others’ solutions
+Discuss approach
+🔗 9. Share Code Feature
+Share code link
+Post in feed
+Attach in doubt
+🤖 10. AI Code Helper (Advanced)
+Suggest improvements
+Explain code
+Debug errors
+🎥 11. Coding Reels Integration
+Watch short coding videos
+Direct link to practice problem
+📈 12. Progress Tracking
+Problems solved
+Weak topics
+Daily practice streak
+⚙️ 13. Extra Features
+Save code drafts
+Download code
+Copy/share button
+Full-screen coding mode    🎯 1. Core Rule
+
+👉 Users can upload ONLY educational reels
+
+Allowed:
+
+📘 Concept explanation (Math, Coding, Science)
+💻 Coding tutorials
+📊 Quick tips (exam tricks, formulas)
+🎓 Academic guidance
+
+Not allowed:
+
+❌ Dance / memes
+❌ Entertainment videos
+❌ Irrelevant content
+🧠 2. Upload Flow (Controlled)
+
+When user uploads reel:
+
+Required Fields:
+📚 Subject (Math, Coding, etc.)
+🏷️ Topic (e.g., “Pointers”, “Integration”)
+📝 Short description
+
+👉 This forces educational intent
+
+🤖 3. Smart Content Filtering (Very Important)
+
+Even if you don’t show “anti-spam”, backend must check:
+
+AI checks:
+Speech/text in video
+Title/description relevance
+
+👉 If not educational:
+
+Reject upload OR
+Send for review
+👀 4. Reel Feed System
+📱 Feed Sections:
+Trending Study Reels
+Subject-wise reels
+Personalized learning reels
+📊 5. Engagement Features
+❤️ Like
+💬 Comment
+🔖 Save
+🔁 Share
+🏆 6. Reward System
+
+Give credits for quality reels:
+
+Upload reel → +5 credits
+10 likes → +10 credits
+Trending reel → bonus
+
+👉 Encourages useful content
+
+⚠️ 7. Quality Control (Silent System)
+Low engagement reels → less visibility
+Educational reels → boosted
+
+👉 No need to show rules, system handles it
+
+👥 8. Community Impact
+Students learn faster
+Visual learning improves
+Platform becomes addictive (in good way)
+🎯 9. Example
+
+User uploads:
+👉 “Binary Search in 30 sec”
+
+Tags: Coding, Algorithms
+Gets likes → earns credits
+🏁 Final Concept
+
+👉 “Reels = Short, powerful learning bites”
+
+Not entertainment
+But still engaging like social media
+
+💡 Pro Tip (Important)
+
+Don’t make it too strict at start:
+
+Allow uploads 
+Then filter & promote good content
+
+👉 Let system evolve       🎯 1. Core Idea
+
+Each student gets a personal study timetable inside their profile.
+
+👉 Purpose:
+
+Plan study time
+Track daily progress
+Improve consistency
+🧠 2. Schedule Creation System
+✏️ Create Timetable
+Add subject (Math, Coding, etc.)
+Select day (Mon–Sun)
+Set time slot (e.g., 5 PM – 7 PM)
+Add topic (e.g., “Arrays”, “Integration”)
+🔁 Repeat Options
+Daily
+Weekly
+Custom days
+📊 3. Smart Dashboard View
+📅 Views:
+Daily View
+Weekly View
+Monthly View
+
+👉 Example:
+
+Monday:
+5–6 PM → Math
+7–8 PM → Coding
+⏰ 4. Reminder & Notification System
+🔔 “Your Coding session starts in 10 mins”
+📢 Missed schedule alert
+Daily summary notification
+✅ 5. Task Completion Tracking
+Mark task as:
+✅ Completed
+❌ Missed
+📈 Progress Tracking:
+% of tasks completed
+Weekly performance
+Study streak
+🔥 6. Study Streak System
+Daily completion → streak increases
+Miss a day → streak resets
+
+👉 Add reward:
+
+7-day streak → bonus credits
+🧩 7. Integration with EduConnect Features
+🔗 Connect with:
+📚 Doubt system:
+Suggest questions related to your schedule
+🧠 AI:
+Recommend topics based on weak areas
+👥 8. Community Study Mode
+Join group schedule
+Study with friends
+Shared timetable
+🎯 9. Focus Mode (Advanced Feature)
+Start timer for study session
+Block distractions (optional UI)
+Track focus time
+📊 10. Analytics Section
+
+Show inside profile:
+
+Total study hours
+Most studied subject
+Weak areas
+Consistency graph
+💡 11. Smart Suggestions (AI Feature)
+“You missed Math 3 times this week”
+“Focus more on Coding”
+📅 12. Calendar Integration
+Full calendar UI
+Add/edit/delete tasks
+Drag & drop schedule
+⚙️ 13. Extra Features
+Export schedule (PDF)
+Dark/light mode
+Multi-language support
+Sync with exams
+🏁 FINAL SYSTEM FLOW
+User creates timetable
+Gets reminders
+Completes tasks
+Earns streak + credits
+Tracks performance

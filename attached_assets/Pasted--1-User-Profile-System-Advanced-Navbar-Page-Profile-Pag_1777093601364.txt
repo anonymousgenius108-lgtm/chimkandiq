@@ -1,0 +1,111 @@
+👤 1. User Profile System (Advanced Navbar Page)
+📌 Profile Page Sections:
+👤 Profile photo + name + bio
+🎓 Academic details (course, college, subjects)
+🏅 Achievements & badges
+📊 Analytics:
+Questions asked
+Answers given
+Best answers
+Rank
+💰 Credits Wallet (current balance)
+💸 Withdraw option (if eligible)
+👥 Followers / Following count
+🎯 Skills & interests
+🎭 Extra-curricular activities
+
+👉 This becomes a LinkedIn-style academic profile
+
+🔗 2. Follow System
+Follow / Unfollow users
+View followers & following list
+Feed shows content from followed users
+
+👉 Builds network + engagement
+
+💬 3. Messaging System (Smart + Secure)
+🔓 Public Profile Messaging
+Anyone can send message directly
+🔒 Private Profile Messaging (Request System)
+
+Flow:
+
+User sends message request
+Receiver sees:
+👉 “XYZ wants to message you”
+Options:
+✅ Accept → chat enabled
+❌ Reject → blocked
+⚙️ Messaging Features:
+Unlimited messages
+Text + images + files
+Online/offline status
+Seen ✔✔
+
+⛔ Block Feature:
+User can block anyone
+Blocked user:
+Cannot message
+Cannot view profile
+🔍 4. Search System
+
+Search bar should allow:
+
+👤 Search users
+❓ Search questions
+🎥 Search reels/videos
+🏷️ Search tags
+
+👉 One unified smart search system
+
+🎥 5. Reel / Content Discovery
+Click search → explore reels
+Short educational videos
+Trending + recommended content
+🏆 6. Leaderboard (Advanced)
+🥇 Main Leaderboard:
+Based on score (answers, upvotes, etc.)
+⚠️ Mislead Leaderboard (Unique Idea)
+
+👉 Shows:
+
+Only number of users flagged for misleading
+No profile names shown
+
+Example:
+
+“⚠️ 120 users flagged this week”
+
+👉 Purpose:
+
+Transparency
+No public shaming
+📊 7. Profile Analytics System
+
+Each user can see:
+
+📈 Weekly performance
+📊 Answer success rate
+🏆 Rank improvement
+💬 Engagement stats
+💰 8. Wallet + Withdraw UI
+
+Inside profile/navbar:
+
+Current credits
+Credit history
+Transfer credits option
+Withdraw button (if ≥ ₹100)
+⚙️ 9. Navigation Bar (Main UI Structure)
+📌 Navbar Tabs:
+🏠 Home (Feed)
+🔍 Search
+➕ Ask Doubt
+💬 Messages
+🔔 Notifications
+👤 Profile
+⚠️ 10. Safety & Control System
+🚫 Block users
+🚨 Report user/content
+🤖 Spam detection
+⚖️ Restriction system for inactive users

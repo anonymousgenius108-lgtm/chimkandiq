@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ZbGsSg767jaswQmuXYxI5"
+uri = "file://lib/db/drizzle/0000_educonnect_initial.sql"
+type = "unspecified"
+title = "EduConnect Supabase schema SQL"
+description = "Paste this generated schema into the Supabase SQL Editor and run it once. It creates the 31 tables and foreign keys required by EduConnect; it contains no credentials."
+logical_id = "2b9cbfbe-e13a-4f0e-989d-173611572a13"
+content_hash = "sha256:7fd849b43a22e66112d52f795bc0cee4c800ce5da0bedb2596d3aaf16f6d928f"
+size = 13294
+mtime_ms = 1790181836352
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:036764c5-8b59-4dae-98f4-9ba71a89d69d/2b9cbfbe-e13a-4f0e-989d-173611572a13/dd39f6cd-b15d-4c86-a160-beb7a67bc340"
+storage_version_token = "1790181866061939"
+content_type = "application/octet-stream"

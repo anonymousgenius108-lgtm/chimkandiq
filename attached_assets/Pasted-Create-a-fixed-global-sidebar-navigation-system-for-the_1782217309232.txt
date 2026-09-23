@@ -1,0 +1,160 @@
+Create a fixed global sidebar navigation system for the entire education app.
+
+The sidebar must NOT change from page to page. It should remain the same on all pages for students, tutors, marketplace, library, IDE, courses, chat, profile, settings, and every other module.
+
+The sidebar should contain only the most important direct navigation pages, not every small feature.
+
+FIXED SIDEBAR MAIN PAGES:
+
+* Dashboard
+* My Courses
+* Library
+* CodeLab / IDE
+* Marketplace
+* Study Rooms
+* Chat
+* Goals
+* Profile
+* Settings
+
+The sidebar should stay:
+
+* Fixed on desktop
+* Collapsible on tablet
+* Bottom navigation or drawer on mobile
+* Same order on every page
+* Same icons on every page
+* Same active state logic on every page
+
+Do not create different sidebars for different pages.
+Do not add too many small sections inside the sidebar.
+Do not put every feature into the sidebar.
+
+SECONDARY PAGE ACCESS SYSTEM:
+
+All other pages, tools, features, and sub-systems should be accessible through a “three-line menu button” above the sidebar.
+
+Place a hamburger / three-line menu button at the top above the sidebar.
+
+This three-line menu should open a full feature drawer or mega menu.
+
+The three-line menu should contain secondary systems such as:
+
+* Auction Hub
+* Lucky Royal
+* Theme Store
+* Reels
+* Mind Arena
+* Referral System
+* Credit Wallet
+* Quartz Wallet
+* Subscription Plans
+* Groups
+* Clubs
+* Followers
+* Tutor Tools
+* Admin Tools
+* Notifications
+* Downloads
+* Saved Items
+* Certificates
+* Assignments
+* Tests
+* AI Assistant
+* Live Classroom
+* Whiteboard
+* Calendar
+* Productivity Tools
+
+SIDEBAR BEHAVIOR:
+
+The sidebar should act as the main app anchor.
+
+When user changes page:
+
+* Sidebar remains visible
+* Sidebar layout does not change
+* Only active icon changes
+* Page content changes in main content area
+
+Example:
+Dashboard → My Courses → Course Details → Chapter → Topic → Quiz
+
+The sidebar remains the same.
+
+BREADCRUMB / BACK SYSTEM:
+
+Use breadcrumb navigation inside page content.
+
+Example:
+Dashboard → My Courses → Physics → Chapter 1 → Topic 2 → Quiz
+
+Back button should go step-by-step:
+Quiz → Topic 2 → Chapter 1 → Physics → My Courses → Dashboard
+
+Do not use sidebar for deep nested pages.
+
+THREE-LINE MENU BEHAVIOR:
+
+When user clicks the three-line menu:
+
+* Open feature drawer
+* Show all secondary systems grouped by category
+* Allow search inside menu
+* Allow pinning favorite tools
+* Allow recently used tools
+* Allow role-based access
+
+Menu categories:
+
+1. Learning Tools
+2. AI Tools
+3. Marketplace Tools
+4. Community Tools
+5. Productivity Tools
+6. Wallet & Economy
+7. Tutor Tools
+8. Account Tools
+
+ROLE-BASED VISIBILITY:
+
+For students:
+Show student-related tools in the three-line menu.
+
+For tutors:
+Show tutor-related tools in the three-line menu.
+
+For admins:
+Show admin tools only if user role is admin.
+
+But the main sidebar should still remain stable and minimal.
+
+UI/UX DESIGN:
+
+Sidebar style:
+
+* Premium
+* Clean
+* Icon-based
+* Smooth hover effects
+* Active page glow
+* Tooltip on hover
+* Collapsible mode
+
+Three-line menu style:
+
+* Full-height drawer
+* Smooth slide animation
+* Search bar
+* Grouped tools
+* Icons
+* Recent tools
+* Favorite tools
+* Role badges
+
+FINAL RULE:
+
+The sidebar is for direct major pages only.
+The three-line menu is for all secondary tools and hidden systems.
+Nested pages use breadcrumbs and back buttons.
+This keeps the app clean, scalable, and easy to use even with 70+ features.

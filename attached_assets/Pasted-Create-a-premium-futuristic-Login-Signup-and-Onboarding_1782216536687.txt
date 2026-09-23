@@ -1,0 +1,320 @@
+Create a premium futuristic Login, Signup, and Onboarding system for an AI-powered educational ecosystem app with separate access for Students and Tutors.
+
+The login page should feel modern, secure, smooth, and professional, like a next-generation education platform.
+
+MAIN LOGIN PAGE
+
+Create a responsive login page with:
+
+* App logo
+* App name
+* Short tagline
+* Login form
+* Signup option
+* Student/Tutor role selector
+* Google login
+* Email login
+* OTP login
+* Forgot password
+* Remember me
+* Terms & privacy checkbox
+* Smooth animations
+* Dark/light theme support
+* Mobile responsive design
+
+PAGE TAGLINE
+
+Use a tagline like:
+“Learn, teach, build, and grow inside one AI-powered student ecosystem.”
+
+LOGIN OPTIONS
+
+Users can login using:
+
+* Email + password
+* Google account
+* Phone OTP
+* Magic link email login
+
+ROLE SELECTION
+
+Before signup, user must choose:
+
+1. Student
+2. Tutor
+
+Show two large role cards:
+
+STUDENT CARD:
+Title: “I am a Student”
+Description:
+“Learn courses, solve questions, join study rooms, code, save resources, and grow with AI.”
+
+Button:
+“Continue as Student”
+
+TUTOR CARD:
+Title: “I am a Tutor”
+Description:
+“Create courses, teach live, manage students, track analytics, sell resources, and grow your teaching business.”
+
+Button:
+“Continue as Tutor”
+
+STUDENT SIGNUP FORM
+
+Student signup fields:
+
+* Full name
+* Username
+* Email
+* Phone number
+* Password
+* Confirm password
+* Class / College / Level
+* Subjects of interest
+* Learning goals
+* Preferred language
+* Referral code optional
+* Terms & conditions checkbox
+
+After signup, redirect to Student Onboarding.
+
+STUDENT ONBOARDING
+
+Ask student:
+
+* What are you studying?
+* Which subjects do you want to improve?
+* What is your main goal?
+* Do you want coding support?
+* Preferred study time
+* Preferred theme
+* Notification preferences
+
+Then create student profile and redirect to:
+Student Dashboard
+
+TUTOR SIGNUP FORM
+
+Tutor signup fields:
+
+* Full name
+* Username
+* Email
+* Phone number
+* Password
+* Confirm password
+* Teaching subjects
+* Experience
+* Qualification
+* Languages
+* Availability
+* Bio
+* Certificates upload optional
+* Identity verification optional
+* Referral code optional
+* Terms & conditions checkbox
+
+After signup, redirect to Tutor Onboarding.
+
+TUTOR ONBOARDING
+
+Ask tutor:
+
+* What subjects do you teach?
+* Which class/level do you teach?
+* Do you want to create courses?
+* Do you want to host live classes?
+* Do you want to sell resources?
+* Set availability
+* Set profile visibility
+* Choose dashboard theme
+
+Then create tutor profile and redirect to:
+Tutor Dashboard
+
+FORGOT PASSWORD FLOW
+
+User clicks forgot password:
+
+* Enter email/phone
+* Send reset link or OTP
+* Verify code
+* Create new password
+* Show success message
+
+SECURITY FEATURES
+
+Add:
+
+* Firebase Authentication
+* Email verification
+* Phone OTP verification
+* Google OAuth
+* Password strength meter
+* Device/session tracking
+* Login history
+* Suspicious login alert
+* 2FA optional
+* Rate limiting
+* Captcha after multiple failed attempts
+
+ROLE-BASED REDIRECTION
+
+After login:
+
+* If user role = student → Student Dashboard
+* If user role = tutor → Tutor Dashboard
+* If user role = admin → Admin Panel
+
+Do not show wrong dashboard to wrong role.
+
+UI/UX DESIGN
+
+Design style:
+
+* Futuristic
+* Glassmorphism
+* Smooth gradients
+* Soft glow effects
+* Clean typography
+* Animated role cards
+* Modern input fields
+* Floating background elements
+* Responsive mobile layout
+
+BACKGROUND DESIGN
+
+Use an educational futuristic background:
+
+* Abstract AI grid
+* Floating books
+* Coding symbols
+* Study icons
+* Soft particles
+* Gradient glow
+* Optional animated background
+
+FORM VALIDATION
+
+Validate:
+
+* Email format
+* Phone number
+* Password strength
+* Required fields
+* Username availability
+* Duplicate email
+* Terms accepted
+
+ERROR MESSAGES
+
+Use friendly messages:
+
+* “Please enter a valid email.”
+* “Password must be at least 8 characters.”
+* “This username is already taken.”
+* “OTP expired. Please request a new one.”
+
+SUCCESS MESSAGES
+
+Examples:
+
+* “Account created successfully.”
+* “Welcome to your Student Dashboard.”
+* “Tutor profile setup complete.”
+* “Verification email sent.”
+
+AUTH STATE MANAGEMENT
+
+Keep user logged in securely using Firebase auth state.
+
+If already logged in:
+
+* Redirect student to Student Dashboard
+* Redirect tutor to Tutor Dashboard
+
+DATABASE STRUCTURE
+
+Create Firebase collections:
+
+* users
+* studentProfiles
+* tutorProfiles
+* authLogs
+* onboardingResponses
+* referralCodes
+* userSettings
+
+USER DOCUMENT FIELDS
+
+users:
+
+* uid
+* fullName
+* username
+* email
+* phone
+* role
+* photoURL
+* createdAt
+* lastLogin
+* onboardingCompleted
+* subscriptionPlan
+* quartzBalance
+* creditBalance
+* status
+
+studentProfiles:
+
+* uid
+* classLevel
+* subjects
+* goals
+* preferredLanguage
+* studyTime
+* interests
+* focusSettings
+
+tutorProfiles:
+
+* uid
+* subjects
+* experience
+* qualification
+* availability
+* bio
+* verificationStatus
+* rating
+* totalStudents
+
+NAVIGATION FLOW
+
+Landing Page
+→ Login / Signup
+→ Role Selection
+→ Student Signup or Tutor Signup
+→ Onboarding
+→ Role-Based Dashboard
+
+BACK BUTTON LOGIC
+
+Use step-based navigation:
+Signup → Role Selection → Landing Page
+
+Onboarding step 3 → Onboarding step 2 → Onboarding step 1
+
+Do not reset form data when user goes back.
+
+FINAL EXPERIENCE
+
+The login system should feel like:
+
+“A secure AI-powered gateway into a complete digital education ecosystem.”
+
+Students should feel:
+“I am entering my personal learning universe.”
+
+Tutors should feel:
+“I am entering my professional teaching command center.”

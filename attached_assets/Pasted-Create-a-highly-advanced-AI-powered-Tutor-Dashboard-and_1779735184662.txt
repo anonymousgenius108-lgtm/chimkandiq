@@ -1,0 +1,454 @@
+Create a highly advanced AI-powered Tutor Dashboard and Tutor Management System for a futuristic educational ecosystem platform. The tutor interface should feel like a professional teaching operating system combining elements of Discord, Notion, Google Classroom, Zoom, VS Code, Replit, and modern AI productivity platforms. The tutor page must be completely separate from the student dashboard with its own controls, analytics, permissions, monetization tools, classroom systems, and AI-powered teaching assistants.
+
+The tutor dashboard should act as a “Teaching Command Center” where tutors can manage courses, students, analytics, live sessions, assignments, coding classrooms, AI-generated content, revenue, marketplace assets, groups, clubs, and productivity systems inside one connected ecosystem.
+
+MAIN TUTOR DASHBOARD
+
+When tutors log in, show a premium futuristic dashboard with:
+
+* Total students
+* Active courses
+* Revenue analytics
+* Upcoming live sessions
+* AI insights
+* Student engagement graph
+* Weak topic alerts
+* Assignment progress
+* Notification center
+* Quartz balance
+* Credits balance
+* Subscription status
+* Focus analytics
+* Course completion rates
+
+Use glassmorphism, smooth animations, realtime cards, glowing UI effects, modern charts, floating widgets, and responsive layouts.
+
+1. TUTOR PROFILE SYSTEM
+
+Tutor profiles should include:
+
+* Profile photo
+* Banner image
+* Verification badge
+* Bio
+* Qualifications
+* Skills
+* Subjects taught
+* Experience
+* Languages
+* Ratings
+* Reviews
+* Total students taught
+* Courses published
+* Social links
+* Availability schedule
+
+Profile actions:
+
+* Edit professional profile
+* Upload certificates
+* Verify identity
+* Share public profile
+* Customize themes
+* Privacy settings
+
+2. COURSE MANAGEMENT SYSTEM
+
+Create a complete Course Control Panel where tutors can:
+
+* Create new courses
+* Edit existing courses
+* Delete/archive courses
+* Organize classes and subjects
+* Add chapters/topics/subtopics
+* Upload videos
+* Upload PDFs
+* Upload coding projects
+* Upload assignments
+* Add revision notes
+* Schedule live sessions
+* Add prerequisites
+* Lock/unlock chapters
+* Create quizzes/tests
+* Create coding tasks
+* Publish/unpublish content
+
+COURSE STRUCTURE
+
+Every course should follow:
+Class → Subject → Chapter → Topic → Subtopic → Quiz/Test → Assignment → Revision
+
+Each course dashboard should show:
+
+* Progress analytics
+* Completion rates
+* Student activity
+* Weak topics
+* Attention heatmaps
+* Quiz accuracy
+* Watch time analytics
+
+3. AI COURSE ASSISTANT
+
+Integrate AI tools directly into tutor workflow.
+
+AI features:
+
+* Generate quizzes automatically
+* Generate flashcards
+* Generate summaries
+* Generate revision sheets
+* Generate assignments
+* Generate coding problems
+* Detect weak topics
+* Analyze student behavior
+* Create study roadmaps
+* Create AI explanations
+* Create adaptive tests
+
+AI should analyze:
+
+* Student attention span
+* Quiz performance
+* Learning patterns
+* Confusing concepts
+* Drop-off rates
+
+4. LIVE CLASSROOM SYSTEM
+
+Create advanced realtime classroom infrastructure.
+
+Features:
+
+* Video meetings
+* Voice rooms
+* Whiteboard
+* Screen sharing
+* Live coding
+* Polls
+* Raise hand system
+* Attendance tracking
+* AI subtitles
+* Session recording
+* Breakout rooms
+* Realtime chat
+* Shared notes
+
+Tutor controls:
+
+* Mute students
+* Remove students
+* Lock room
+* Assign moderators
+* Start/end session
+* Record session
+* Share files
+* Start focus mode
+
+5. STUDENT MANAGEMENT SYSTEM
+
+Tutors can:
+
+* View all students
+* Search/filter students
+* Track performance
+* View weak subjects
+* View progress reports
+* Send announcements
+* Add personal notes
+* Assign tasks
+* Monitor attendance
+* Monitor focus analytics
+
+Each student profile visible to tutors should include:
+
+* Completion percentage
+* Focus score
+* Quiz performance
+* Weak topics
+* Coding progress
+* Reading analytics
+* Study streaks
+
+6. ASSIGNMENT & TEST SYSTEM
+
+Tutors can:
+
+* Create assignments
+* Create coding contests
+* Create mock tests
+* Create timed quizzes
+* Set deadlines
+* Add marks/weightage
+* Enable anti-cheat mode
+* Disable copy-paste during exams
+
+Test features:
+
+* Adaptive difficulty
+* Randomized questions
+* AI anti-cheat
+* Instant grading
+* Weak-topic analysis
+* Coding compiler integration
+
+7. TUTOR IDE & LIVE CODING SYSTEM
+
+Integrate full CodeLab system into tutor dashboard.
+
+Features:
+
+* Teach coding live
+* Share code execution
+* Create coding rooms
+* Collaborative coding
+* Shared terminal
+* Live compiler
+* AI code explanation
+* DSA visualizer
+* Team coding sessions
+
+Support:
+
+* C
+* C++
+* Python
+* Java
+* JavaScript
+* React
+* Node.js
+* SQL
+* TypeScript
+* Rust
+* Go
+
+8. ANALYTICS COMMAND CENTER
+
+Create advanced analytics dashboard with:
+
+* Revenue graphs
+* Student growth
+* Engagement analytics
+* Attention heatmaps
+* Course completion rates
+* Most difficult topics
+* Retention analytics
+* Watch-time analytics
+* Marketplace sales analytics
+* Group activity analytics
+
+AI insights:
+
+* Recommend revision topics
+* Identify struggling students
+* Detect engagement drops
+* Suggest teaching improvements
+
+9. MARKETPLACE & AUCTION HUB FOR TUTORS
+
+Tutors can:
+
+* Sell premium notes
+* Sell study bundles
+* Sell coding templates
+* Sell revision packs
+* Sell workshop access
+* Auction exclusive content
+* Start live bidding sessions
+
+Auction Hub should support:
+
+* Live bids
+* Secret bids
+* Quick buy
+* Limited drops
+* Realtime countdowns
+* Watchlists
+* Auto bidding
+* Notifications
+
+Payments:
+
+* Quartz for small assets
+* INR for premium products
+
+10. TUTOR CLUB & COMMUNITY SYSTEM
+
+Tutors can create:
+
+* Public clubs
+* Premium clubs
+* Study communities
+* Coding communities
+* Exam preparation groups
+
+Club features:
+
+* Shared resources
+* Realtime discussions
+* Announcements
+* Events
+* Challenges
+* Group analytics
+* Shared whiteboards
+* Group study rooms
+
+11. REVENUE & WALLET SYSTEM
+
+Tutor wallet should show:
+
+* INR earnings
+* Quartz earnings
+* Subscription revenue
+* Marketplace revenue
+* Auction revenue
+* Referral rewards
+* Withdrawals
+* Transactions
+* Pending payouts
+
+Add:
+
+* Revenue charts
+* Invoice history
+* Withdrawal requests
+* Payment settings
+
+12. CREDIT SYSTEM FOR TUTORS
+
+Tutors use Credits for:
+
+* AI course generation
+* Bulk quiz generation
+* AI student analytics
+* AI summaries
+* AI classroom insights
+* Advanced rendering
+* AI coding assistance
+
+Show:
+
+* Credit balance
+* Daily refill
+* Usage history
+* Upgrade options
+
+13. GLOBAL CHAT & COMMUNICATION
+
+Tutor communication features:
+
+* Global educator chat
+* Student announcements
+* Group chats
+* Club chats
+* Voice rooms
+* Direct messaging
+* Priority educational replies
+
+Add:
+
+* Spam protection
+* AI moderation
+* Slow mode
+* Notification controls
+
+14. RESOURCE & LIBRARY SYSTEM
+
+Tutors can:
+
+* Upload PDFs
+* Upload notes
+* Upload recordings
+* Upload coding examples
+* Upload templates
+* Organize resource folders
+* Share resources with classes/groups
+
+All downloads should save only inside:
+Profile → Store → Downloads
+
+Support offline access with encrypted local storage.
+
+15. SUBSCRIPTION SYSTEM
+
+Tutor subscription plans:
+
+* Free Tutor
+* Tutor Plus
+* Tutor Pro
+
+Premium features unlock:
+
+* More students
+* More courses
+* Advanced analytics
+* Better AI tools
+* Priority visibility
+* Premium themes
+* Team management
+* Larger storage
+
+16. TEAM MANAGEMENT SYSTEM
+
+Tutors can:
+
+* Add assistant tutors
+* Add moderators
+* Assign permissions
+* Manage teaching teams
+* Manage community admins
+
+17. PRODUCTIVITY & FOCUS SYSTEM
+
+Tutor productivity tools:
+
+* Pomodoro timer
+* Deep focus mode
+* AI productivity assistant
+* Calendar integration
+* Goal tracking
+* Session scheduling
+* Reminder systems
+
+18. UI/UX DESIGN
+
+The tutor dashboard should feel:
+
+* Premium
+* Futuristic
+* Smooth
+* Professional
+* Modular
+* Realtime
+* AI-powered
+
+Use:
+
+* Glassmorphism
+* Animated charts
+* Neon/glow effects
+* Floating widgets
+* Modular sidebars
+* Realtime activity indicators
+* Responsive layouts
+* Downloadable theme packs
+
+FINAL EXPERIENCE
+
+The tutor system should feel like:
+“A complete AI-powered teaching operating system.”
+
+Where tutors can:
+
+* Teach
+* Analyze
+* Monetize
+* Collaborate
+* Build communities
+* Manage classrooms
+* Create content
+* Run coding sessions
+* Track student growth
+* Use AI teaching assistants
+
+inside one connected futuristic educational ecosystem.

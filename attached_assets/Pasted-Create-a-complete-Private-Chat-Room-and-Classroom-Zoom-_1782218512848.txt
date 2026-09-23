@@ -1,0 +1,251 @@
+Create a complete Private Chat Room and Classroom Zoom-Style Meeting System for the education app.
+
+This system should support private communication, live teaching, group learning, tutor meetings, student study sessions, and protected classroom spaces.
+
+PRIVATE CHAT ROOM SYSTEM
+
+Users can create private chat rooms for:
+
+* Student groups
+* Tutor-student discussion
+* Coding teams
+* Project teams
+* Study groups
+* Club members
+* Course batches
+
+Private room features:
+
+* Invite-only access
+* Room code / invite link
+* Password-protected room option
+* Admin approval option
+* Member list
+* Role permissions
+* File sharing
+* PDF sharing
+* Voice notes
+* Image sharing
+* Pinned messages
+* Search messages
+* Save important messages
+* Report system
+* Block user option
+
+ROOM ROLES:
+
+* Owner
+* Admin
+* Moderator
+* Member
+* Guest
+
+Owner/admin controls:
+
+* Add members
+* Remove members
+* Mute members
+* Lock room
+* Delete room
+* Change room privacy
+* Pin announcements
+* Control file uploads
+
+CLASSROOM / ZOOM MEETING SYSTEM
+
+Create a Zoom-style live classroom system inside the app.
+
+Meeting types:
+
+* Tutor live class
+* 1v1 tutor meeting
+* Group study meeting
+* Coding classroom
+* Doubt-solving room
+* Club event
+* Workshop
+* Private mentoring session
+
+MEETING FEATURES:
+
+* Video call
+* Audio call
+* Screen sharing
+* Whiteboard
+* Live chat
+* Raise hand
+* Mute/unmute
+* Camera on/off
+* Participant list
+* Waiting room
+* Meeting lock
+* Host controls
+* Co-host controls
+* Attendance tracking
+* Meeting recording
+* Session notes
+* File sharing
+* Polls
+* Breakout rooms
+* Reactions
+* Captions/subtitles
+* AI class summary
+
+HOST / TUTOR CONTROLS:
+
+* Start meeting
+* End meeting
+* Admit users from waiting room
+* Remove participant
+* Mute all
+* Disable chat
+* Enable/disable screen share
+* Assign co-host
+* Start recording
+* Share whiteboard
+* Create polls
+* Create breakout rooms
+* Lock meeting
+* Send announcement
+
+STUDENT PARTICIPANT CONTROLS:
+
+* Join meeting
+* Leave meeting
+* Raise hand
+* Send chat
+* Share file if allowed
+* Turn camera on/off
+* Mute/unmute microphone
+* View shared screen
+* Download allowed notes into in-app Store
+
+WAITING ROOM SYSTEM:
+Before joining, users enter waiting room.
+
+Waiting room shows:
+
+* Meeting title
+* Host name
+* Scheduled time
+* Join status
+* Camera/mic test
+* Internet quality check
+* Waiting message
+
+Host can:
+
+* Admit one user
+* Admit all users
+* Reject users
+* Auto-admit verified students
+
+ATTENDANCE SYSTEM:
+Track:
+
+* Join time
+* Leave time
+* Total time attended
+* Participation score
+* Poll response
+* Chat activity
+* Focus status optional
+
+Save attendance to:
+Tutor Dashboard → Class Analytics
+
+RECORDING SYSTEM:
+If host records meeting:
+
+* Save recording inside tutor Store
+* Allow tutor to share with students
+* Students can save recording only inside:
+  Profile → Store → Meeting Recordings
+
+Downloaded recordings must remain inside app and work offline if allowed.
+
+AI MEETING ASSISTANT:
+After meeting ends, AI generates:
+
+* Class summary
+* Important points
+* Homework
+* Questions discussed
+* Revision notes
+* Attendance summary
+* Weak-topic alerts
+* Follow-up tasks
+
+LIVE CODING CLASSROOM:
+For coding classes, integrate CodeLab.
+
+Features:
+
+* Shared IDE
+* Run code live
+* Show output
+* Debug together
+* Tutor explains code
+* Students follow along
+* Export code notes to Store
+
+PRIVATE MEETING SECURITY:
+Add:
+
+* Unique meeting ID
+* Password option
+* Waiting room
+* Host approval
+* End-to-end encryption option
+* Report abuse
+* Block user
+* Meeting lock
+* Screenshot restriction optional
+* Session logs
+
+NOTIFICATIONS:
+Notify users for:
+
+* Meeting scheduled
+* Meeting starting soon
+* Host started class
+* New private room invite
+* Meeting recording available
+* AI summary ready
+
+UI/UX DESIGN:
+The meeting interface should feel like:
+
+* Zoom
+* Google Meet
+* Discord voice room
+* Microsoft Teams classroom
+  but customized for education.
+
+Use:
+
+* Clean video grid
+* Floating toolbar
+* Sidebar chat
+* Participants panel
+* Whiteboard panel
+* Smooth animations
+* Dark/light mode
+* Mobile responsive layout
+
+FINAL EXPERIENCE:
+The Private Chat Room and Classroom Meeting system should feel like:
+
+“A secure real-time digital classroom where tutors and students can talk, learn, share, code, collaborate, and continue learning after the session.”
+
+It must connect with:
+
+* Courses
+* Tutor dashboard
+* Student dashboard
+* Store/downloads
+* Notifications
+* AI assistant
+* Attendance analytics
+* CodeLab
+* Library

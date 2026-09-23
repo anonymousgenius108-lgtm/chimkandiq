@@ -1,0 +1,174 @@
+Update the Tutor Interface with a fixed global sidebar and three-line feature menu system.
+
+The tutor sidebar must remain fixed and consistent across all tutor pages. It should not change when the tutor moves between dashboard, courses, students, analytics, marketplace, rooms, or profile pages.
+
+TUTOR FIXED SIDEBAR MAIN PAGES:
+
+* Tutor Dashboard
+* My Courses
+* Students
+* Live Classes
+* CodeLab
+* Marketplace
+* Chat
+* Analytics
+* Profile
+* Settings
+
+The sidebar should show only direct and most important tutor pages. Do not overcrowd the sidebar with every tutor tool.
+
+TUTOR THREE-LINE MENU SYSTEM:
+
+Place a hamburger / three-line menu button above the tutor sidebar.
+
+This menu opens a full tutor feature drawer containing all secondary tutor tools.
+
+Tutor feature drawer should include:
+
+COURSE TOOLS:
+
+* Create Course
+* Course Drafts
+* Class Management
+* Subject Management
+* Chapter Builder
+* Topic Builder
+* Quiz Builder
+* Assignment Builder
+* Course Roadmap
+* Course Certificates
+
+LIVE TEACHING TOOLS:
+
+* Start Live Class
+* Schedule Session
+* Whiteboard
+* Screen Share
+* Attendance
+* Polls
+* Breakout Rooms
+* Session Recordings
+* Class Summary
+
+STUDENT TOOLS:
+
+* Student List
+* Batch Management
+* Student Progress
+* Weak Topic Reports
+* Attendance Reports
+* Focus Analytics
+* Private Notes
+* Send Announcement
+
+AI TUTOR TOOLS:
+
+* AI Course Generator
+* AI Quiz Generator
+* AI Notes Generator
+* AI Assignment Generator
+* AI Student Analysis
+* AI Weak Topic Detection
+* AI Class Summary
+* AI Teaching Suggestions
+
+MARKETPLACE TOOLS:
+
+* Upload Asset
+* My Assets
+* Sales Analytics
+* Auction Hub
+* Lucky Royal Rooms
+* Creator Dashboard
+* Seller Reputation
+* Revenue Reports
+
+COMMUNITY TOOLS:
+
+* Tutor Clubs
+* Study Groups
+* Coding Rooms
+* Group Announcements
+* Followers
+* Invite Students
+* Message Followers
+* Message Friends
+
+WALLET & SUBSCRIPTION TOOLS:
+
+* INR Earnings
+* Quartz Wallet
+* Credit Wallet
+* Withdrawals
+* Transactions
+* Subscription Plan
+* Invoices
+
+RESOURCE TOOLS:
+
+* Library Uploads
+* PDFs
+* Notes
+* Recordings
+* Templates
+* Store / Downloads
+* Offline Materials
+
+PRODUCTIVITY TOOLS:
+
+* Calendar
+* Goals
+* Reminders
+* Focus Mode
+* Teaching Schedule
+* Availability
+
+SIDEBAR BEHAVIOR:
+
+The tutor sidebar should:
+
+* Stay fixed on desktop
+* Collapse on tablet
+* Open as drawer on mobile
+* Keep same order everywhere
+* Highlight active main page
+* Show tooltips on hover
+
+PAGE NAVIGATION:
+
+Deep tutor pages should not appear inside the sidebar.
+
+Example:
+Tutor Dashboard → My Courses → Course Builder → Chapter Builder → Topic Editor → Quiz Builder
+
+Back button should work step-by-step:
+Quiz Builder → Topic Editor → Chapter Builder → Course Builder → My Courses → Tutor Dashboard
+
+Use breadcrumbs inside the main content area.
+
+THREE-LINE MENU FEATURES:
+
+The tutor three-line menu should include:
+
+* Search tools
+* Recently used tools
+* Favorite/pinned tools
+* Role-based access
+* Grouped categories
+* Quick actions
+
+Example quick actions:
+
+* Start Live Class
+* Create Course
+* Upload Notes
+* Send Announcement
+* Generate Quiz with AI
+
+FINAL RULE:
+
+Tutor sidebar = only major direct pages.
+Three-line menu = all secondary tutor tools.
+Breadcrumbs = nested page navigation.
+
+This keeps the tutor interface clean, professional, scalable, and easy to use even with many teaching tools.

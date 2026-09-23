@@ -1,0 +1,2566 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: EduConnect API - connect students with tutors
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: tutors
+    description: Tutor discovery and profiles
+  - name: subjects
+    description: Subject taxonomy
+  - name: reviews
+    description: Tutor reviews and ratings
+  - name: bookings
+    description: Session bookings and payments
+  - name: messages
+    description: Direct messages between students and tutors
+  - name: notifications
+    description: Session reminders and alerts
+  - name: dashboard
+    description: Summary insights for the student dashboard
+  - name: qna
+    description: Student-to-student doubt questions and answers
+  - name: reels
+    description: Short learning videos
+  - name: gamification
+    description: Points, levels, badges, and leaderboard
+  - name: profiles
+    description: User profiles, follow graph, and analytics
+  - name: search
+    description: Unified search across users, questions, and reels
+  - name: wallet
+    description: Credits balance, history, and withdraw
+  - name: tutor-dashboard
+    description: Tutor command center — students, courses, analytics, revenue
+  - name: codelab
+    description: In-app coding practice problems with AI assistance
+  - name: openai
+    description: OpenAI AI chat operations
+  - name: library
+    description: Digital knowledge vault — books, PDFs, and AI-powered study tools
+  - name: marketplace
+    description: Creator economy — buy and sell educational assets
+paths:
+  /codelab/problems:
+    get:
+      operationId: listCodelabProblems
+      tags: [codelab]
+      summary: List all coding problems
+      parameters:
+        - name: difficulty
+          in: query
+          schema: { type: string, enum: [easy, medium, hard] }
+        - name: subject
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          description: List of problems
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CodelabProblemSummary"
+  /codelab/problems/{slug}:
+    get:
+      operationId: getCodelabProblem
+      tags: [codelab]
+      summary: Get a problem by slug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Problem detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CodelabProblem"
+  /codelab/problems/{slug}/run:
+    post:
+      operationId: runCodelabCode
+      tags: [codelab]
+      summary: Run code against test cases (simulated execution)
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CodelabCodeInput"
+      responses:
+        "200":
+          description: Run result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CodelabRunResult"
+  /codelab/problems/{slug}/submit:
+    post:
+      operationId: submitCodelabCode
+      tags: [codelab]
+      summary: Submit code for grading
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CodelabCodeInput"
+      responses:
+        "200":
+          description: Submission result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CodelabSubmission"
+  /codelab/problems/{slug}/hint:
+    post:
+      operationId: getCodelabAiHint
+      tags: [codelab]
+      summary: Get an AI hint for the current code (SSE stream)
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CodelabAiHintRequest"
+      responses:
+        "200":
+          description: SSE stream of AI hint
+          content:
+            text/event-stream: {}
+  /codelab/submissions:
+    get:
+      operationId: listCodelabSubmissions
+      tags: [codelab]
+      summary: List the current user's submissions
+      responses:
+        "200":
+          description: Submissions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CodelabSubmission"
+  /openai/conversations:
+    get:
+      operationId: listOpenaiConversations
+      tags: [openai]
+      summary: List all conversations
+      responses:
+        "200":
+          description: List of conversations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/OpenaiConversation"
+    post:
+      operationId: createOpenaiConversation
+      tags: [openai]
+      summary: Create a new conversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OpenaiConversationInput"
+      responses:
+        "201":
+          description: Created conversation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OpenaiConversation"
+  /openai/conversations/{id}:
+    get:
+      operationId: getOpenaiConversation
+      tags: [openai]
+      summary: Get conversation with messages
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Conversation with messages
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OpenaiConversationWithMessages"
+  /openai/conversations/{id}/messages:
+    post:
+      operationId: sendOpenaiMessage
+      tags: [openai]
+      summary: Send a message and stream a response
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OpenaiMessageInput"
+      responses:
+        "200":
+          description: SSE stream of assistant response
+          content:
+            text/event-stream: {}
+
+  /tutor-dashboard/overview:
+    get:
+      operationId: getTutorOverview
+      tags: [tutor-dashboard]
+      summary: Tutor dashboard overview stats and smart alerts
+      responses:
+        "200":
+          description: Overview data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TutorOverview"
+
+  /tutor-dashboard/students:
+    get:
+      operationId: listTutorStudents
+      tags: [tutor-dashboard]
+      summary: All enrolled students with performance metrics
+      responses:
+        "200":
+          description: Student list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TutorStudent"
+
+  /tutor-dashboard/courses:
+    get:
+      operationId: listTutorCourses
+      tags: [tutor-dashboard]
+      summary: Courses created by the tutor
+      responses:
+        "200":
+          description: Course list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TutorCourse"
+
+  /tutor-dashboard/revenue:
+    get:
+      operationId: getTutorRevenue
+      tags: [tutor-dashboard]
+      summary: Revenue breakdown, monthly chart and recent transactions
+      responses:
+        "200":
+          description: Revenue data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TutorRevenue"
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /subjects:
+    get:
+      operationId: listSubjects
+      tags: [subjects]
+      summary: List subjects with tutor counts
+      responses:
+        "200":
+          description: List of subjects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Subject"
+
+  /tutors:
+    get:
+      operationId: listTutors
+      tags: [tutors]
+      summary: Search tutors by subject, availability, price, or rating
+      parameters:
+        - name: q
+          in: query
+          schema: { type: string }
+          description: Free text search across name, headline, and bio
+        - name: subject
+          in: query
+          schema: { type: string }
+          description: Filter by subject slug
+        - name: day
+          in: query
+          schema:
+            type: string
+            enum: [mon, tue, wed, thu, fri, sat, sun]
+          description: Filter by day of week the tutor is available
+        - name: minRating
+          in: query
+          schema: { type: number, minimum: 0, maximum: 5 }
+        - name: maxPrice
+          in: query
+          schema: { type: number, minimum: 0 }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [recommended, rating, priceAsc, priceDesc, experience]
+      responses:
+        "200":
+          description: Matching tutors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TutorSummary"
+
+  /tutors/featured:
+    get:
+      operationId: listFeaturedTutors
+      tags: [tutors]
+      summary: Featured tutors curated for the home page
+      responses:
+        "200":
+          description: Featured tutors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TutorSummary"
+
+  /tutors/{tutorId}:
+    get:
+      operationId: getTutor
+      tags: [tutors]
+      summary: Get tutor profile
+      parameters:
+        - name: tutorId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Tutor profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tutor"
+        "404":
+          description: Not found
+
+  /tutors/{tutorId}/reviews:
+    get:
+      operationId: listTutorReviews
+      tags: [reviews]
+      parameters:
+        - name: tutorId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Reviews for the tutor
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Review"
+    post:
+      operationId: createTutorReview
+      tags: [reviews]
+      parameters:
+        - name: tutorId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateReviewBody"
+      responses:
+        "201":
+          description: Review created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Review"
+
+  /tutors/{tutorId}/availability:
+    get:
+      operationId: getTutorAvailability
+      tags: [tutors]
+      summary: Get next 14 days of available time slots
+      parameters:
+        - name: tutorId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Availability slots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AvailabilitySlot"
+
+  /bookings:
+    get:
+      operationId: listBookings
+      tags: [bookings]
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [upcoming, completed, cancelled, all]
+      responses:
+        "200":
+          description: List of bookings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Booking"
+    post:
+      operationId: createBooking
+      tags: [bookings]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateBookingPayload"
+      responses:
+        "201":
+          description: Booking created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+
+  /bookings/{bookingId}:
+    get:
+      operationId: getBooking
+      tags: [bookings]
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Booking details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+    patch:
+      operationId: updateBooking
+      tags: [bookings]
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateBookingPayload"
+      responses:
+        "200":
+          description: Booking updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+
+  /bookings/{bookingId}/pay:
+    post:
+      operationId: payForBooking
+      tags: [bookings]
+      summary: Securely capture payment for a booking (demo gateway)
+      parameters:
+        - name: bookingId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaymentBody"
+      responses:
+        "200":
+          description: Payment captured
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaymentResult"
+
+  /messages/threads:
+    get:
+      operationId: listMessageThreads
+      tags: [messages]
+      responses:
+        "200":
+          description: Conversation threads
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MessageThread"
+
+  /messages/threads/{tutorId}:
+    get:
+      operationId: getMessageThread
+      tags: [messages]
+      parameters:
+        - name: tutorId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Messages in thread with this tutor
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Message"
+    post:
+      operationId: sendMessage
+      tags: [messages]
+      parameters:
+        - name: tutorId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SendMessagePayload"
+      responses:
+        "201":
+          description: Message sent
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Message"
+
+  /notifications:
+    get:
+      operationId: listNotifications
+      tags: [notifications]
+      responses:
+        "200":
+          description: Recent notifications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Notification"
+
+  /notifications/{notificationId}/read:
+    post:
+      operationId: markNotificationRead
+      tags: [notifications]
+      parameters:
+        - name: notificationId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Notification marked read
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Notification"
+
+  /qna/questions:
+    get:
+      operationId: listQuestions
+      tags: [qna]
+      summary: List doubt questions, optionally filtered by tag or search
+      parameters:
+        - name: q
+          in: query
+          schema: { type: string }
+        - name: tag
+          in: query
+          schema: { type: string }
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [recent, top, unanswered]
+      responses:
+        "200":
+          description: Matching questions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/QuestionSummary"
+    post:
+      operationId: askQuestion
+      tags: [qna]
+      summary: Ask a new doubt question
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AskQuestionPayload"
+      responses:
+        "201":
+          description: Question created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Question"
+
+  /qna/questions/{questionId}:
+    get:
+      operationId: getQuestion
+      tags: [qna]
+      parameters:
+        - name: questionId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Question detail with answers
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QuestionDetail"
+
+  /qna/questions/{questionId}/answers:
+    post:
+      operationId: postAnswer
+      tags: [qna]
+      parameters:
+        - name: questionId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostAnswerPayload"
+      responses:
+        "201":
+          description: Answer submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Answer"
+
+  /qna/questions/{questionId}/vote:
+    post:
+      operationId: voteOnQuestion
+      tags: [qna]
+      parameters:
+        - name: questionId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VotePayload"
+      responses:
+        "200":
+          description: Updated vote tally
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VoteResult"
+
+  /qna/answers/{answerId}/vote:
+    post:
+      operationId: voteOnAnswer
+      tags: [qna]
+      parameters:
+        - name: answerId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VotePayload"
+      responses:
+        "200":
+          description: Updated vote tally
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VoteResult"
+
+  /qna/answers/{answerId}/best:
+    post:
+      operationId: markBestAnswer
+      tags: [qna]
+      parameters:
+        - name: answerId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Best answer marked
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QuestionDetail"
+
+  /reels:
+    get:
+      operationId: listReels
+      tags: [reels]
+      parameters:
+        - name: subject
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          description: Reels feed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Reel"
+
+  /reels/{reelId}/like:
+    post:
+      operationId: toggleReelLike
+      tags: [reels]
+      parameters:
+        - name: reelId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Like toggled
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReelLikeResult"
+
+  /reels/{reelId}/comments:
+    get:
+      operationId: listReelComments
+      tags: [reels]
+      parameters:
+        - name: reelId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Comments on the reel
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ReelComment"
+    post:
+      operationId: postReelComment
+      tags: [reels]
+      parameters:
+        - name: reelId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostReelCommentPayload"
+      responses:
+        "201":
+          description: Comment posted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReelComment"
+
+  /gamification/me:
+    get:
+      operationId: getMyGamification
+      tags: [gamification]
+      responses:
+        "200":
+          description: Current user gamification snapshot
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MyGamification"
+
+  /gamification/leaderboard:
+    get:
+      operationId: getLeaderboard
+      tags: [gamification]
+      parameters:
+        - name: period
+          in: query
+          schema:
+            type: string
+            enum: [daily, weekly, monthly, allTime]
+      responses:
+        "200":
+          description: Ranked users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LeaderboardEntry"
+
+  /gamification/badges:
+    get:
+      operationId: listAllBadges
+      tags: [gamification]
+      responses:
+        "200":
+          description: All badges in the catalogue
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Badge"
+
+  /dashboard/summary:
+    get:
+      operationId: getDashboardSummary
+      tags: [dashboard]
+      summary: Aggregated stats and recent activity for the student dashboard
+      responses:
+        "200":
+          description: Dashboard summary
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardSummary"
+
+  /profiles/me:
+    get:
+      operationId: getMyProfile
+      tags: [profiles]
+      summary: Profile of the current demo user
+      responses:
+        "200":
+          description: Current profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+    patch:
+      operationId: updateMyProfile
+      tags: [profiles]
+      summary: Update editable profile fields for the current user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateProfilePayload"
+      responses:
+        "200":
+          description: Updated profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+
+  /profiles/{userName}:
+    get:
+      operationId: getProfile
+      tags: [profiles]
+      summary: Public profile with stats, badges, and follow status
+      parameters:
+        - name: userName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Profile detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProfileDetail"
+
+  /profiles/{userName}/follow:
+    post:
+      operationId: followUser
+      tags: [profiles]
+      summary: Follow a user
+      parameters:
+        - name: userName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Follow result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FollowResult"
+    delete:
+      operationId: unfollowUser
+      tags: [profiles]
+      summary: Unfollow a user
+      parameters:
+        - name: userName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Follow result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FollowResult"
+
+  /profiles/{userName}/followers:
+    get:
+      operationId: listFollowers
+      tags: [profiles]
+      summary: Users following this profile
+      parameters:
+        - name: userName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Followers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProfileSummary"
+
+  /profiles/{userName}/following:
+    get:
+      operationId: listFollowing
+      tags: [profiles]
+      summary: Users this profile follows
+      parameters:
+        - name: userName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Following
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProfileSummary"
+
+  /profiles/{userName}/activity:
+    get:
+      operationId: listProfileActivity
+      tags: [profiles]
+      summary: Recent questions, answers, and reels by this user
+      parameters:
+        - name: userName
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Activity items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ActivityItem"
+
+  /search:
+    get:
+      operationId: search
+      tags: [search]
+      summary: Unified search across users, questions, reels, and tags
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string, minLength: 1 }
+      responses:
+        "200":
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SearchResults"
+
+  /wallet/me:
+    get:
+      operationId: getMyWallet
+      tags: [wallet]
+      summary: Credits balance and recent ledger
+      responses:
+        "200":
+          description: Wallet info
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Wallet"
+
+  /wallet/withdraw:
+    post:
+      operationId: requestWithdraw
+      tags: [wallet]
+      summary: Request a (mock) withdrawal of available credits
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WithdrawPayload"
+      responses:
+        "200":
+          description: Withdrawal receipt
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WithdrawResult"
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error: { type: string }
+                required: [error]
+
+  /library:
+    get:
+      operationId: listLibraryBooks
+      tags: [library]
+      summary: List books with optional category and search filters
+      parameters:
+        - name: category
+          in: query
+          schema: { type: string }
+        - name: q
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          description: List of library books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LibraryBook"
+
+  /library/{id}:
+    get:
+      operationId: getLibraryBook
+      tags: [library]
+      summary: Get a single book with full details and AI summary
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Book detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LibraryBookDetail"
+
+  /marketplace:
+    get:
+      operationId: listMarketplaceItems
+      tags: [marketplace]
+      summary: List marketplace items with optional filters
+      parameters:
+        - name: category
+          in: query
+          schema: { type: string }
+        - name: q
+          in: query
+          schema: { type: string }
+        - name: sort
+          in: query
+          schema: { type: string, enum: [popular, newest, price-asc, free-first] }
+      responses:
+        "200":
+          description: List of marketplace items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MarketplaceItem"
+
+  /marketplace/{id}:
+    get:
+      operationId: getMarketplaceItem
+      tags: [marketplace]
+      summary: Get a single marketplace item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Item detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MarketplaceItem"
+
+  /rooms:
+    get:
+      operationId: listStudyRooms
+      tags: [rooms]
+      summary: List all study rooms
+      parameters:
+        - name: type
+          in: query
+          schema: { type: string }
+        - name: status
+          in: query
+          schema: { type: string }
+      responses:
+        "200":
+          description: List of study rooms
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/StudyRoom"
+    post:
+      operationId: createStudyRoom
+      tags: [rooms]
+      summary: Create a new study room
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateRoomInput"
+      responses:
+        "201":
+          description: Room created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StudyRoom"
+
+  /rooms/{roomId}:
+    get:
+      operationId: getStudyRoom
+      tags: [rooms]
+      summary: Get room detail with members
+      parameters:
+        - name: roomId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Room detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StudyRoom"
+
+  /rooms/{roomId}/join:
+    post:
+      operationId: joinStudyRoom
+      tags: [rooms]
+      summary: Join a study room
+      parameters:
+        - name: roomId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/JoinRoomInput"
+      responses:
+        "200":
+          description: Joined room with members list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  room:
+                    $ref: "#/components/schemas/StudyRoom"
+                  members:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/RoomMember"
+                required: [room, members]
+
+  /rooms/{roomId}/leave:
+    post:
+      operationId: leaveStudyRoom
+      tags: [rooms]
+      summary: Leave a study room
+      parameters:
+        - name: roomId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Left room
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success: { type: boolean }
+                required: [success]
+
+  /rooms/{roomId}/messages:
+    get:
+      operationId: getRoomMessages
+      tags: [rooms]
+      summary: Get messages in a room
+      parameters:
+        - name: roomId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: List of messages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/RoomMessage"
+    post:
+      operationId: sendRoomMessage
+      tags: [rooms]
+      summary: Send a message to a room
+      parameters:
+        - name: roomId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SendRoomMessageInput"
+      responses:
+        "201":
+          description: Message sent
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoomMessage"
+
+  /rooms/{roomId}/members:
+    get:
+      operationId: getRoomMembers
+      tags: [rooms]
+      summary: Get members in a room
+      parameters:
+        - name: roomId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: List of members
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/RoomMember"
+
+  /lucky-royal:
+    get:
+      operationId: listLuckyRoyalRooms
+      tags: [marketplace]
+      summary: List active Lucky Royal rooms
+      responses:
+        "200":
+          description: Active rooms
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LuckyRoyalRoom"
+
+  /lucky-royal/{id}:
+    get:
+      operationId: getLuckyRoyalRoom
+      tags: [marketplace]
+      summary: Get a single Lucky Royal room
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Room detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LuckyRoyalRoom"
+
+  /lucky-royal/{id}/spin:
+    post:
+      operationId: spinLuckyRoyal
+      tags: [marketplace]
+      summary: Enter and spin a Lucky Royal room
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Spin result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LuckyRoyalResult"
+        "400":
+          description: Insufficient credits or room closed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error: { type: string }
+                required: [error]
+
+  /marketplace/{id}/purchase:
+    post:
+      operationId: purchaseMarketplaceItem
+      tags: [marketplace]
+      summary: Purchase an item using credits
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Purchase result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MarketplacePurchaseResult"
+        "400":
+          description: Insufficient credits or error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error: { type: string }
+                required: [error]
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status: { type: string }
+      required: [status]
+
+    Subject:
+      type: object
+      properties:
+        slug: { type: string }
+        name: { type: string }
+        tutorCount: { type: integer }
+      required: [slug, name, tutorCount]
+
+    AvailabilityWindow:
+      type: object
+      properties:
+        day:
+          type: string
+          enum: [mon, tue, wed, thu, fri, sat, sun]
+        startHour: { type: integer, minimum: 0, maximum: 23 }
+        endHour: { type: integer, minimum: 1, maximum: 24 }
+      required: [day, startHour, endHour]
+
+    AvailabilitySlot:
+      type: object
+      properties:
+        startsAt: { type: string, format: date-time }
+        endsAt: { type: string, format: date-time }
+      required: [startsAt, endsAt]
+
+    TutorSummary:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        headline: { type: string }
+        avatarUrl: { type: string }
+        subjects:
+          type: array
+          items: { type: string }
+        hourlyRate: { type: number }
+        rating: { type: number }
+        reviewCount: { type: integer }
+        yearsExperience: { type: integer }
+        languages:
+          type: array
+          items: { type: string }
+        location: { type: string }
+        isOnline: { type: boolean }
+      required:
+        [
+          id,
+          name,
+          headline,
+          avatarUrl,
+          subjects,
+          hourlyRate,
+          rating,
+          reviewCount,
+          yearsExperience,
+          languages,
+          location,
+          isOnline,
+        ]
+
+    Tutor:
+      allOf:
+        - $ref: "#/components/schemas/TutorSummary"
+        - type: object
+          properties:
+            bio: { type: string }
+            education: { type: string }
+            responseTimeMinutes: { type: integer }
+            totalSessions: { type: integer }
+            availability:
+              type: array
+              items:
+                $ref: "#/components/schemas/AvailabilityWindow"
+          required: [bio, education, responseTimeMinutes, totalSessions, availability]
+
+    Review:
+      type: object
+      properties:
+        id: { type: string }
+        tutorId: { type: string }
+        studentName: { type: string }
+        studentAvatarUrl: { type: string }
+        rating: { type: integer, minimum: 1, maximum: 5 }
+        comment: { type: string }
+        createdAt: { type: string, format: date-time }
+      required:
+        [id, tutorId, studentName, studentAvatarUrl, rating, comment, createdAt]
+
+    CreateReviewBody:
+      type: object
+      properties:
+        studentName: { type: string, minLength: 1 }
+        rating: { type: integer, minimum: 1, maximum: 5 }
+        comment: { type: string, minLength: 1 }
+      required: [studentName, rating, comment]
+
+    Booking:
+      type: object
+      properties:
+        id: { type: string }
+        tutorId: { type: string }
+        tutorName: { type: string }
+        tutorAvatarUrl: { type: string }
+        studentName: { type: string }
+        subject: { type: string }
+        startsAt: { type: string, format: date-time }
+        endsAt: { type: string, format: date-time }
+        durationMinutes: { type: integer }
+        price: { type: number }
+        status:
+          type: string
+          enum: [pending_payment, confirmed, completed, cancelled]
+        notes: { type: string }
+        createdAt: { type: string, format: date-time }
+      required:
+        [
+          id,
+          tutorId,
+          tutorName,
+          tutorAvatarUrl,
+          studentName,
+          subject,
+          startsAt,
+          endsAt,
+          durationMinutes,
+          price,
+          status,
+          notes,
+          createdAt,
+        ]
+
+    CreateBookingPayload:
+      type: object
+      properties:
+        tutorId: { type: string }
+        studentName: { type: string, minLength: 1 }
+        subject: { type: string, minLength: 1 }
+        startsAt: { type: string, format: date-time }
+        durationMinutes: { type: integer, minimum: 30, maximum: 240 }
+        notes: { type: string }
+      required: [tutorId, studentName, subject, startsAt, durationMinutes]
+
+    UpdateBookingPayload:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [confirmed, completed, cancelled]
+        notes: { type: string }
+
+    PaymentBody:
+      type: object
+      properties:
+        cardholderName: { type: string, minLength: 1 }
+        cardLast4:
+          type: string
+          minLength: 4
+          maxLength: 4
+          pattern: "^[0-9]{4}$"
+        expiry: { type: string, minLength: 5, maxLength: 5 }
+      required: [cardholderName, cardLast4, expiry]
+
+    PaymentResult:
+      type: object
+      properties:
+        bookingId: { type: string }
+        status: { type: string }
+        receiptId: { type: string }
+        paidAt: { type: string, format: date-time }
+        amount: { type: number }
+      required: [bookingId, status, receiptId, paidAt, amount]
+
+    MessageThread:
+      type: object
+      properties:
+        tutorId: { type: string }
+        tutorName: { type: string }
+        tutorAvatarUrl: { type: string }
+        lastMessage: { type: string }
+        lastMessageAt: { type: string, format: date-time }
+        unreadCount: { type: integer }
+        isOnline: { type: boolean }
+      required:
+        [
+          tutorId,
+          tutorName,
+          tutorAvatarUrl,
+          lastMessage,
+          lastMessageAt,
+          unreadCount,
+          isOnline,
+        ]
+
+    Message:
+      type: object
+      properties:
+        id: { type: string }
+        tutorId: { type: string }
+        sender:
+          type: string
+          enum: [student, tutor]
+        content: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, tutorId, sender, content, createdAt]
+
+    SendMessagePayload:
+      type: object
+      properties:
+        content: { type: string, minLength: 1 }
+      required: [content]
+
+    Notification:
+      type: object
+      properties:
+        id: { type: string }
+        type:
+          type: string
+          enum: [session_reminder, message, booking_confirmed, review_request, system]
+        title: { type: string }
+        body: { type: string }
+        read: { type: boolean }
+        createdAt: { type: string, format: date-time }
+        link: { type: string }
+      required: [id, type, title, body, read, createdAt, link]
+
+    DashboardSummary:
+      type: object
+      properties:
+        upcomingSessions: { type: integer }
+        hoursLearned: { type: number }
+        totalSpent: { type: number }
+        completedSessions: { type: integer }
+        favoriteSubject: { type: string }
+        nextSession:
+          oneOf:
+            - $ref: "#/components/schemas/Booking"
+            - type: "null"
+        weeklyHours:
+          type: array
+          items:
+            type: object
+            properties:
+              day: { type: string }
+              hours: { type: number }
+            required: [day, hours]
+        topSubjects:
+          type: array
+          items:
+            type: object
+            properties:
+              subject: { type: string }
+              hours: { type: number }
+            required: [subject, hours]
+        recentActivity:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              type: { type: string }
+              text: { type: string }
+              at: { type: string, format: date-time }
+            required: [id, type, text, at]
+      required:
+        [
+          upcomingSessions,
+          hoursLearned,
+          totalSpent,
+          completedSessions,
+          favoriteSubject,
+          weeklyHours,
+          topSubjects,
+          recentActivity,
+        ]
+
+    QuestionSummary:
+      type: object
+      properties:
+        id: { type: string }
+        authorName: { type: string }
+        authorAvatarUrl: { type: string }
+        title: { type: string }
+        excerpt: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        viewCount: { type: integer }
+        answerCount: { type: integer }
+        voteCount: { type: integer }
+        hasBestAnswer: { type: boolean }
+        createdAt: { type: string, format: date-time }
+      required:
+        [id, authorName, authorAvatarUrl, title, excerpt, tags, viewCount, answerCount, voteCount, hasBestAnswer, createdAt]
+
+    Question:
+      type: object
+      properties:
+        id: { type: string }
+        authorName: { type: string }
+        authorAvatarUrl: { type: string }
+        title: { type: string }
+        body: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        viewCount: { type: integer }
+        voteCount: { type: integer }
+        bestAnswerId:
+          oneOf:
+            - { type: string }
+            - { type: "null" }
+        createdAt: { type: string, format: date-time }
+      required:
+        [id, authorName, authorAvatarUrl, title, body, tags, viewCount, voteCount, bestAnswerId, createdAt]
+
+    Answer:
+      type: object
+      properties:
+        id: { type: string }
+        questionId: { type: string }
+        authorName: { type: string }
+        authorAvatarUrl: { type: string }
+        body: { type: string }
+        voteCount: { type: integer }
+        isBest: { type: boolean }
+        createdAt: { type: string, format: date-time }
+      required: [id, questionId, authorName, authorAvatarUrl, body, voteCount, isBest, createdAt]
+
+    QuestionDetail:
+      type: object
+      properties:
+        question:
+          $ref: "#/components/schemas/Question"
+        answers:
+          type: array
+          items:
+            $ref: "#/components/schemas/Answer"
+      required: [question, answers]
+
+    AskQuestionPayload:
+      type: object
+      properties:
+        title: { type: string, minLength: 5, maxLength: 200 }
+        body: { type: string, minLength: 10 }
+        tags:
+          type: array
+          items: { type: string }
+      required: [title, body, tags]
+
+    PostAnswerPayload:
+      type: object
+      properties:
+        body: { type: string, minLength: 5 }
+      required: [body]
+
+    VotePayload:
+      type: object
+      properties:
+        value:
+          type: integer
+          enum: [-1, 0, 1]
+      required: [value]
+
+    VoteResult:
+      type: object
+      properties:
+        targetId: { type: string }
+        voteCount: { type: integer }
+        myVote:
+          type: integer
+          enum: [-1, 0, 1]
+      required: [targetId, voteCount, myVote]
+
+    Reel:
+      type: object
+      properties:
+        id: { type: string }
+        authorName: { type: string }
+        authorAvatarUrl: { type: string }
+        title: { type: string }
+        description: { type: string }
+        videoUrl: { type: string }
+        thumbnailUrl: { type: string }
+        durationSec: { type: integer }
+        subjectSlug: { type: string }
+        viewCount: { type: integer }
+        likeCount: { type: integer }
+        commentCount: { type: integer }
+        likedByMe: { type: boolean }
+        createdAt: { type: string, format: date-time }
+      required:
+        [id, authorName, authorAvatarUrl, title, description, videoUrl, thumbnailUrl, durationSec, subjectSlug, viewCount, likeCount, commentCount, likedByMe, createdAt]
+
+    ReelLikeResult:
+      type: object
+      properties:
+        reelId: { type: string }
+        likeCount: { type: integer }
+        likedByMe: { type: boolean }
+      required: [reelId, likeCount, likedByMe]
+
+    ReelComment:
+      type: object
+      properties:
+        id: { type: string }
+        reelId: { type: string }
+        authorName: { type: string }
+        authorAvatarUrl: { type: string }
+        body: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, reelId, authorName, authorAvatarUrl, body, createdAt]
+
+    PostReelCommentPayload:
+      type: object
+      properties:
+        body: { type: string, minLength: 1 }
+      required: [body]
+
+    Badge:
+      type: object
+      properties:
+        code: { type: string }
+        name: { type: string }
+        description: { type: string }
+        icon: { type: string }
+        tier: { type: string }
+        threshold: { type: integer }
+      required: [code, name, description, icon, tier, threshold]
+
+    EarnedBadge:
+      allOf:
+        - $ref: "#/components/schemas/Badge"
+        - type: object
+          properties:
+            earnedAt: { type: string, format: date-time }
+          required: [earnedAt]
+
+    MyGamification:
+      type: object
+      properties:
+        userName: { type: string }
+        avatarUrl: { type: string }
+        points: { type: integer }
+        level:
+          type: object
+          properties:
+            tier: { type: string }
+            label: { type: string }
+            currentLevelPoints: { type: integer }
+            nextLevelPoints:
+              oneOf:
+                - { type: integer }
+                - { type: "null" }
+            progressPct: { type: number }
+          required: [tier, label, currentLevelPoints, nextLevelPoints, progressPct]
+        currentStreak: { type: integer }
+        longestStreak: { type: integer }
+        rankAllTime: { type: integer }
+        pointsThisWeek: { type: integer }
+        pointsToday: { type: integer }
+        badges:
+          type: array
+          items:
+            $ref: "#/components/schemas/EarnedBadge"
+        recentEvents:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              kind: { type: string }
+              points: { type: integer }
+              reference: { type: string }
+              awardedAt: { type: string, format: date-time }
+            required: [id, kind, points, reference, awardedAt]
+      required:
+        [userName, avatarUrl, points, level, currentStreak, longestStreak, rankAllTime, pointsThisWeek, pointsToday, badges, recentEvents]
+
+    LeaderboardEntry:
+      type: object
+      properties:
+        rank: { type: integer }
+        userName: { type: string }
+        avatarUrl: { type: string }
+        points: { type: integer }
+        levelLabel: { type: string }
+        isMe: { type: boolean }
+      required: [rank, userName, avatarUrl, points, levelLabel, isMe]
+
+    Profile:
+      type: object
+      properties:
+        userName: { type: string }
+        displayName: { type: string }
+        avatarUrl: { type: string }
+        bio: { type: string }
+        course: { type: string }
+        college: { type: string }
+        yearOfStudy: { type: string }
+        location: { type: string }
+        subjects:
+          type: array
+          items: { type: string }
+        skills:
+          type: array
+          items: { type: string }
+        interests:
+          type: array
+          items: { type: string }
+        activities:
+          type: array
+          items: { type: string }
+        isPrivate: { type: boolean }
+        joinedAt: { type: string, format: date-time }
+      required:
+        [userName, displayName, avatarUrl, bio, course, college, yearOfStudy, location, subjects, skills, interests, activities, isPrivate, joinedAt]
+
+    UpdateProfilePayload:
+      type: object
+      properties:
+        bio: { type: string, maxLength: 500 }
+        course: { type: string, maxLength: 120 }
+        college: { type: string, maxLength: 120 }
+        yearOfStudy: { type: string, maxLength: 40 }
+        location: { type: string, maxLength: 120 }
+        subjects:
+          type: array
+          items: { type: string }
+        skills:
+          type: array
+          items: { type: string }
+        interests:
+          type: array
+          items: { type: string }
+        activities:
+          type: array
+          items: { type: string }
+        isPrivate: { type: boolean }
+
+    ProfileSummary:
+      type: object
+      properties:
+        userName: { type: string }
+        displayName: { type: string }
+        avatarUrl: { type: string }
+        bio: { type: string }
+        course: { type: string }
+        college: { type: string }
+        points: { type: integer }
+        levelLabel: { type: string }
+        isFollowedByMe: { type: boolean }
+      required:
+        [userName, displayName, avatarUrl, bio, course, college, points, levelLabel, isFollowedByMe]
+
+    ProfileAnalytics:
+      type: object
+      properties:
+        questionsAsked: { type: integer }
+        answersGiven: { type: integer }
+        bestAnswers: { type: integer }
+        reelsPosted: { type: integer }
+        upvotesReceived: { type: integer }
+        rankAllTime: { type: integer }
+      required:
+        [questionsAsked, answersGiven, bestAnswers, reelsPosted, upvotesReceived, rankAllTime]
+
+    ProfileDetail:
+      type: object
+      properties:
+        profile:
+          $ref: "#/components/schemas/Profile"
+        points: { type: integer }
+        levelLabel: { type: string }
+        levelTier: { type: string }
+        currentStreak: { type: integer }
+        longestStreak: { type: integer }
+        followerCount: { type: integer }
+        followingCount: { type: integer }
+        isFollowedByMe: { type: boolean }
+        isMe: { type: boolean }
+        analytics:
+          $ref: "#/components/schemas/ProfileAnalytics"
+        badges:
+          type: array
+          items:
+            $ref: "#/components/schemas/EarnedBadge"
+      required:
+        [profile, points, levelLabel, levelTier, currentStreak, longestStreak, followerCount, followingCount, isFollowedByMe, isMe, analytics, badges]
+
+    FollowResult:
+      type: object
+      properties:
+        userName: { type: string }
+        isFollowedByMe: { type: boolean }
+        followerCount: { type: integer }
+      required: [userName, isFollowedByMe, followerCount]
+
+    ActivityItem:
+      type: object
+      properties:
+        id: { type: string }
+        kind:
+          type: string
+          enum: [question, answer, reel]
+        title: { type: string }
+        subtitle: { type: string }
+        href: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, kind, title, subtitle, href, createdAt]
+
+    SearchResults:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProfileSummary"
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/QuestionSummary"
+        reels:
+          type: array
+          items:
+            $ref: "#/components/schemas/Reel"
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              tag: { type: string }
+              questionCount: { type: integer }
+            required: [tag, questionCount]
+      required: [users, questions, reels, tags]
+
+    WalletEvent:
+      type: object
+      properties:
+        id: { type: string }
+        kind: { type: string }
+        amount: { type: integer }
+        reference: { type: string }
+        occurredAt: { type: string, format: date-time }
+      required: [id, kind, amount, reference, occurredAt]
+
+    Wallet:
+      type: object
+      properties:
+        userName: { type: string }
+        credits: { type: integer }
+        creditsThisWeek: { type: integer }
+        creditsThisMonth: { type: integer }
+        withdrawableCredits: { type: integer }
+        minWithdrawCredits: { type: integer }
+        currency: { type: string }
+        history:
+          type: array
+          items:
+            $ref: "#/components/schemas/WalletEvent"
+      required:
+        [userName, credits, creditsThisWeek, creditsThisMonth, withdrawableCredits, minWithdrawCredits, currency, history]
+
+    WithdrawPayload:
+      type: object
+      properties:
+        amount: { type: integer, minimum: 1 }
+      required: [amount]
+
+    TutorAlert:
+      type: object
+      properties:
+        message: { type: string }
+        severity:
+          type: string
+          enum: [info, warning, critical]
+      required: [message, severity]
+
+    TutorOverview:
+      type: object
+      properties:
+        tutorId: { type: string }
+        tutorName: { type: string }
+        avatarUrl: { type: string }
+        headline: { type: string }
+        totalStudents: { type: integer }
+        totalCourses: { type: integer }
+        totalSessions: { type: integer }
+        avgRating: { type: number }
+        reviewCount: { type: integer }
+        totalRevenue: { type: number }
+        revenueThisMonth: { type: number }
+        revenueLastMonth: { type: number }
+        alerts:
+          type: array
+          items:
+            $ref: "#/components/schemas/TutorAlert"
+      required:
+        [tutorId, tutorName, avatarUrl, headline, totalStudents, totalCourses,
+         totalSessions, avgRating, reviewCount, totalRevenue, revenueThisMonth,
+         revenueLastMonth, alerts]
+
+    TutorStudent:
+      type: object
+      properties:
+        id: { type: string }
+        courseId: { type: string }
+        courseTitle: { type: string }
+        studentName: { type: string }
+        studentAvatarUrl: { type: string }
+        enrolledAt: { type: string }
+        progressPct: { type: integer }
+        lastActiveAt: { type: string }
+        quizAvg: { type: integer }
+        attendancePct: { type: integer }
+        focusScore: { type: integer }
+        weakTopics:
+          type: array
+          items:
+            type: string
+        streakDays: { type: integer }
+      required:
+        [id, courseId, courseTitle, studentName, studentAvatarUrl, enrolledAt,
+         progressPct, lastActiveAt, quizAvg, attendancePct, focusScore,
+         weakTopics, streakDays]
+
+    TutorCourse:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        subjectSlug: { type: string }
+        description: { type: string }
+        thumbnailUrl: { type: string }
+        priceInr: { type: integer }
+        chapterCount: { type: integer }
+        isPublished: { type: boolean }
+        enrolledCount: { type: integer }
+        avgProgress: { type: integer }
+        createdAt: { type: string }
+      required:
+        [id, title, subjectSlug, description, thumbnailUrl, priceInr,
+         chapterCount, isPublished, enrolledCount, avgProgress, createdAt]
+
+    TutorTransaction:
+      type: object
+      properties:
+        id: { type: string }
+        kind:
+          type: string
+          enum: [session, course]
+        description: { type: string }
+        amount: { type: number }
+        occurredAt: { type: string }
+      required: [id, kind, description, amount, occurredAt]
+
+    TutorRevenue:
+      type: object
+      properties:
+        totalEarnings: { type: number }
+        thisMonth: { type: number }
+        lastMonth: { type: number }
+        sessionRevenue: { type: number }
+        courseRevenue: { type: number }
+        monthlyBreakdown:
+          type: array
+          items:
+            type: object
+            properties:
+              month: { type: string }
+              sessions: { type: number }
+              courses: { type: number }
+              total: { type: number }
+            required: [month, sessions, courses, total]
+        recentTransactions:
+          type: array
+          items:
+            $ref: "#/components/schemas/TutorTransaction"
+      required:
+        [totalEarnings, thisMonth, lastMonth, sessionRevenue, courseRevenue,
+         monthlyBreakdown, recentTransactions]
+
+    WithdrawResult:
+      type: object
+      properties:
+        success: { type: boolean }
+        amount: { type: integer }
+        currency: { type: string }
+        creditsRemaining: { type: integer }
+        reference: { type: string }
+        message: { type: string }
+      required: [success, amount, currency, creditsRemaining, reference, message]
+
+    CodelabTestCase:
+      type: object
+      properties:
+        input: { type: string }
+        expected: { type: string }
+        label: { type: string }
+      required: [input, expected, label]
+
+    CodelabProblem:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        slug: { type: string }
+        difficulty: { type: string, enum: [easy, medium, hard] }
+        subject: { type: string }
+        description: { type: string }
+        starterCode: { type: string }
+        tags: { type: array, items: { type: string } }
+        hints: { type: array, items: { type: string } }
+        testCases:
+          type: array
+          items:
+            $ref: "#/components/schemas/CodelabTestCase"
+        createdAt: { type: string }
+      required: [id, title, slug, difficulty, subject, description, starterCode, tags, hints, testCases, createdAt]
+
+    CodelabProblemSummary:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        slug: { type: string }
+        difficulty: { type: string, enum: [easy, medium, hard] }
+        subject: { type: string }
+        tags: { type: array, items: { type: string } }
+        solvedByUser: { type: boolean }
+        attemptCount: { type: integer }
+      required: [id, title, slug, difficulty, subject, tags, solvedByUser, attemptCount]
+
+    CodelabRunResult:
+      type: object
+      properties:
+        passed: { type: boolean }
+        passedCount: { type: integer }
+        totalCount: { type: integer }
+        output: { type: string }
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              label: { type: string }
+              passed: { type: boolean }
+              expected: { type: string }
+              actual: { type: string }
+            required: [label, passed, expected, actual]
+      required: [passed, passedCount, totalCount, output, results]
+
+    CodelabSubmission:
+      type: object
+      properties:
+        id: { type: string }
+        problemId: { type: string }
+        userName: { type: string }
+        code: { type: string }
+        language: { type: string }
+        passed: { type: boolean }
+        passedCount: { type: integer }
+        totalCount: { type: integer }
+        output: { type: string }
+        submittedAt: { type: string }
+      required: [id, problemId, userName, code, language, passed, passedCount, totalCount, output, submittedAt]
+
+    CodelabCodeInput:
+      type: object
+      properties:
+        code: { type: string }
+        language: { type: string }
+      required: [code, language]
+
+    CodelabAiHintRequest:
+      type: object
+      properties:
+        code: { type: string }
+        language: { type: string }
+        conversationId: { type: integer }
+      required: [code, language]
+
+    OpenaiConversation:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, title, createdAt]
+
+    OpenaiMessage:
+      type: object
+      properties:
+        id: { type: integer }
+        conversationId: { type: integer }
+        role: { type: string }
+        content: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, conversationId, role, content, createdAt]
+
+    OpenaiConversationInput:
+      type: object
+      properties:
+        title: { type: string }
+      required: [title]
+
+    OpenaiMessageInput:
+      type: object
+      properties:
+        content: { type: string }
+      required: [content]
+
+    OpenaiConversationWithMessages:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        createdAt: { type: string, format: date-time }
+        messages:
+          type: array
+          items:
+            $ref: "#/components/schemas/OpenaiMessage"
+      required: [id, title, createdAt, messages]
+
+    OpenaiError:
+      type: object
+      properties:
+        error: { type: string }
+      required: [error]
+
+    LibraryBook:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        author: { type: string }
+        category: { type: string }
+        coverUrl: { type: string, nullable: true }
+        shortDesc: { type: string }
+        rating: { type: number }
+        reviewCount: { type: integer }
+        downloads: { type: integer }
+        isFree: { type: boolean }
+        priceCredits: { type: integer }
+        pages: { type: integer }
+        readingTimeMinutes: { type: integer }
+        tags:
+          type: array
+          items: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, title, author, category, shortDesc, rating, reviewCount, downloads, isFree, priceCredits, pages, readingTimeMinutes, tags, createdAt]
+
+    LibraryBookDetail:
+      allOf:
+        - $ref: "#/components/schemas/LibraryBook"
+        - type: object
+          properties:
+            description: { type: string }
+            aiSummary: { type: string, nullable: true }
+            contentPreview: { type: string, nullable: true }
+          required: [description]
+
+    MarketplaceItem:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        creatorName: { type: string }
+        creatorAvatar: { type: string, nullable: true }
+        category: { type: string }
+        priceCredits: { type: integer }
+        isFree: { type: boolean }
+        rating: { type: number }
+        reviewCount: { type: integer }
+        downloads: { type: integer }
+        description: { type: string }
+        previewUrl: { type: string, nullable: true }
+        fileType: { type: string }
+        isFeatured: { type: boolean }
+        tags:
+          type: array
+          items: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, title, creatorName, category, priceCredits, isFree, rating, reviewCount, downloads, description, fileType, isFeatured, tags, createdAt]
+
+    LuckyRoyalRoom:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        description: { type: string }
+        creatorName: { type: string }
+        creatorAvatar: { type: string, nullable: true }
+        rewardTitle: { type: string }
+        rewardImage: { type: string, nullable: true }
+        rewardType: { type: string }
+        entryCredits: { type: integer }
+        maxParticipants: { type: integer }
+        currentParticipants: { type: integer }
+        endsAt: { type: string, format: date-time }
+        status: { type: string }
+        category: { type: string }
+        isFeatured: { type: boolean }
+        createdAt: { type: string, format: date-time }
+      required: [id, title, description, creatorName, rewardTitle, rewardType, entryCredits, maxParticipants, currentParticipants, endsAt, status, category, isFeatured, createdAt]
+
+    LuckyRoyalResult:
+      type: object
+      properties:
+        resultType: { type: string }
+        rewardLabel: { type: string }
+        rewardAmount: { type: integer }
+        newBalance: { type: integer }
+        message: { type: string }
+      required: [resultType, rewardLabel, rewardAmount, newBalance, message]
+
+    MarketplacePurchaseResult:
+      type: object
+      properties:
+        success: { type: boolean }
+        newBalance: { type: integer }
+        message: { type: string }
+      required: [success, newBalance, message]
+
+    StudyRoom:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        type: { type: string }
+        hostName: { type: string }
+        hostAvatar: { type: string, nullable: true }
+        roomCode: { type: string }
+        isLocked: { type: boolean }
+        hasPassword: { type: boolean }
+        maxParticipants: { type: integer }
+        currentParticipants: { type: integer }
+        scheduledAt: { type: string, format: date-time, nullable: true }
+        status: { type: string }
+        description: { type: string, nullable: true }
+        subject: { type: string, nullable: true }
+        createdAt: { type: string, format: date-time }
+      required: [id, title, type, hostName, roomCode, isLocked, hasPassword, maxParticipants, currentParticipants, status, createdAt]
+
+    RoomMember:
+      type: object
+      properties:
+        id: { type: string }
+        roomId: { type: string }
+        userName: { type: string }
+        displayName: { type: string }
+        avatarUrl: { type: string, nullable: true }
+        role: { type: string }
+        isMuted: { type: boolean }
+        isCameraOff: { type: boolean }
+        isHandRaised: { type: boolean }
+        joinedAt: { type: string, format: date-time }
+      required: [id, roomId, userName, displayName, role, isMuted, isCameraOff, isHandRaised, joinedAt]
+
+    RoomMessage:
+      type: object
+      properties:
+        id: { type: string }
+        roomId: { type: string }
+        userName: { type: string }
+        displayName: { type: string }
+        avatarUrl: { type: string, nullable: true }
+        content: { type: string }
+        type: { type: string }
+        createdAt: { type: string, format: date-time }
+      required: [id, roomId, userName, displayName, content, type, createdAt]
+
+    CreateRoomInput:
+      type: object
+      properties:
+        title: { type: string }
+        type: { type: string }
+        password: { type: string, nullable: true }
+        maxParticipants: { type: integer }
+        description: { type: string, nullable: true }
+        subject: { type: string, nullable: true }
+        scheduledAt: { type: string, format: date-time, nullable: true }
+      required: [title, type, maxParticipants]
+
+    SendRoomMessageInput:
+      type: object
+      properties:
+        content: { type: string }
+        type: { type: string }
+      required: [content]
+
+    JoinRoomInput:
+      type: object
+      properties:
+        password: { type: string, nullable: true }
+      required: []

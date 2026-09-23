@@ -1,0 +1,190 @@
+Create a highly engaging vertical short-form educational reel/video system for an AI-powered student ecosystem app. The reel format should be optimized for study content, concept explanation, coding tutorials, productivity tips, revision tricks, mind hacks, exam preparation, AI learning, and motivational educational content. Every uploaded reel must be less than 4 minutes long and designed specifically for high retention, fast learning, and mobile-first viewing.
+
+The overall reel experience should feel like a premium combination of:
+
+* YouTube Shorts
+* Instagram Reels
+* TikTok educational content
+* Duolingo gamified learning
+* Modern AI-powered study platforms
+
+VIDEO REQUIREMENTS:
+
+* Maximum duration: 4 minutes
+* Vertical aspect ratio: 9:16
+* HD/4K support
+* Mobile optimized
+* Smooth subtitles/captions
+* Fast-paced but educational
+* Attention-grabbing first 3 seconds
+
+REEL CONTENT TYPES:
+
+* Quick concept explanation
+* Coding tutorials
+* Formula tricks
+* Revision hacks
+* AI tool tutorials
+* Productivity tips
+* Mind mapping
+* Flashcard explanations
+* Short lectures
+* Competitive exam tricks
+* Motivation for studying
+* Focus improvement tips
+* Career guidance
+* Live problem solving
+* Interview preparation
+* Project showcases
+* Quick quizzes
+* Real-world applications
+
+UPLOAD SYSTEM:
+Users can upload:
+
+* Educational videos
+* Screen recordings
+* Coding demos
+* Whiteboard explanations
+* Animated tutorials
+* Voice-over lessons
+
+UPLOAD FLOW:
+
+1. Select video
+2. Add title
+3. Add description
+4. Select subject/category
+5. Add hashtags/tags
+6. Choose thumbnail
+7. Add subtitles
+8. Select privacy:
+
+   * Public
+   * Followers only
+   * Group only
+9. Upload
+
+AI FEATURES:
+
+* AI auto-caption generation
+* AI subtitle generation
+* AI topic tagging
+* AI category detection
+* AI thumbnail suggestion
+* AI engagement optimization
+* AI spam detection
+* AI educational quality analysis
+
+REEL PLAYER FEATURES:
+
+* Smooth swipe navigation
+* Like system
+* Save system
+* In-app download
+* Share button
+* Follow creator
+* Comment section
+* AI notes generation
+* “Add to Study Later”
+* “Generate Quiz from Reel”
+* “Generate Flashcards”
+* Playback speed control
+* Picture-in-picture mode
+
+IN-APP STORAGE:
+Downloaded reels should save only inside:
+Profile → Store → Saved Reels
+
+Support:
+
+* Offline viewing
+* Encrypted storage
+* Progress sync
+
+RECOMMENDATION SYSTEM:
+AI recommends reels based on:
+
+* Weak topics
+* Current courses
+* Study goals
+* Coding interests
+* Attention analytics
+* Watch history
+
+ANALYTICS FOR CREATORS:
+Show:
+
+* Views
+* Watch time
+* Retention graph
+* Saves
+* Likes
+* Shares
+* Completion rate
+* Engagement score
+
+EDUCATIONAL FOCUS RULES:
+The reel algorithm should prioritize:
+
+* Helpful educational content
+* Coding tutorials
+* Concept clarity
+* Revision content
+* Productivity improvement
+
+Avoid:
+
+* Pure entertainment spam
+* Distracting content
+* Low-quality uploads
+
+ATTENTION SYSTEM:
+During long scrolling:
+
+* Remind users to return to study
+* Suggest focus sessions
+* Recommend productive reels only
+
+SMART FEATURES:
+
+* “Continue learning from this reel”
+* “Open related chapter”
+* “Practice questions from reel”
+* “Join discussion room”
+* “Open coding workspace”
+
+UI/UX STYLE:
+The reel section should feel:
+
+* Smooth
+* Futuristic
+* Fast
+* Addictive but educational
+* AI-powered
+* Minimal distraction
+
+Use:
+
+* Floating UI
+* Animated transitions
+* Glow effects
+* Smart overlays
+* Minimal controls
+* Gesture navigation
+
+FINAL EXPERIENCE:
+The reel system should feel like:
+“A short-form AI-powered educational content universe.”
+
+Where students can:
+
+* Learn fast
+* Revise quickly
+* Discover concepts
+* Watch coding tutorials
+* Improve focus
+* Save resources
+* Continue learning seamlessly
+
+inside one connected educational ecosystem.

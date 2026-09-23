@@ -1,0 +1,1447 @@
+IDE SECTION — COMPLETE SYSTEM
+
+Create dedicated section:
+
+“CodeLab”
+
+Purpose:
+
+Learn coding
+Practice coding
+Build projects
+Collaborate
+Export work
+Convert coding into notes
+MAIN IDE HOME
+
+When user opens IDE section show:
+
+Sections
+Continue Project
+Recent Files
+Coding Challenges
+AI Assistant
+Live Rooms
+Templates
+Saved Snippets
+Team Projects
+Compiler
+Export Center
+
+Everything clickable.
+
+1. MULTI-LANGUAGE SUPPORT
+
+Users can code in:
+
+Languages
+C
+C++
+Python
+Java
+JavaScript
+TypeScript
+Go
+Rust
+PHP
+SQL
+Kotlin
+Swift
+WEB DEVELOPMENT SUPPORT
+
+Frontend:
+
+HTML
+CSS
+JavaScript
+React
+Tailwind
+
+Backend:
+
+Node.js
+Express
+2. CODE EDITOR SYSTEM
+EDITOR FEATURES
+Core Features
+Syntax highlighting
+Auto-complete
+Auto-save
+Error detection
+Code formatting
+Multi-tab support
+Line numbers
+Search/replace
+ADVANCED FEATURES
+Split screen editor
+Mini-map
+Keyboard shortcuts
+Theme support
+Downloadable IDE skins
+3. LIVE OUTPUT / PREVIEW SYSTEM
+
+After code execution:
+
+Show:
+
+Console output
+Browser preview
+Error logs
+Runtime details
+WEB PREVIEW MODE
+
+For HTML/CSS/JS:
+
+Live browser preview
+Mobile preview
+Tablet preview
+Desktop preview
+
+Realtime updating.
+
+4. AI CODING ASSISTANT
+
+Integrated AI assistant.
+
+AI FUNCTIONS
+“Explain Code”
+
+AI explains:
+
+Logic
+Syntax
+Output
+Flow
+“Fix Bug”
+
+AI detects:
+
+Errors
+Warnings
+Optimization opportunities
+“Generate Notes”
+
+Converts code into:
+
+Theory notes
+Step-by-step explanation
+Interview notes
+“Convert Language”
+
+Example:
+
+Python → Java
+C++ → JavaScript
+5. PROJECT SYSTEM
+
+Users can create:
+
+Project Types
+Single file
+Multi-file
+Team project
+Full-stack project
+PROJECT STRUCTURE
+
+Example:
+
+/Project
+   /src
+   /components
+   /assets
+   index.html
+   app.js
+6. FILE MANAGEMENT SYSTEM
+
+Users can:
+
+Create folders
+Rename files
+Duplicate projects
+Delete projects
+Favorite projects
+7. EXPORT SYSTEM
+
+Users can export projects as:
+
+ZIP
+
+Download full project.
+
+PDF
+
+Generate:
+
+Syntax highlighted notes
+Documentation
+Code explanation
+8. STORE INTEGRATION
+
+All projects save inside:
+
+Profile → Store → Code Workspace
+
+Includes:
+
+Projects
+PDFs
+Notes
+Templates
+AI explanations
+9. CLOUD SAVE SYSTEM
+
+Auto cloud sync.
+
+Features:
+
+Auto-save
+Version history
+Recovery system
+Device sync
+10. TEAM CODING / COLLABORATION
+
+Users can:
+
+Invite friends
+Share project
+Edit together
+Chat while coding
+LIVE COLLAB FEATURES
+Shared cursor
+Realtime typing
+Voice room
+Screen share
+11. CODING CHALLENGE SYSTEM
+
+Integrated coding practice.
+
+FEATURES
+DSA questions
+AI-generated problems
+Timed challenges
+Contest mode
+COPY-PASTE RULES
+
+In:
+
+Mock tests
+Coding competitions
+
+Disable:
+
+Copy-paste
+External imports
+NORMAL PROJECT MODE
+
+Copy-paste allowed normally.
+
+12. CODE ANALYTICS
+
+Track:
+
+Coding streak
+Languages used
+Practice time
+Bug-solving ability
+AI SKILL ANALYSIS
+
+AI detects:
+
+Weak concepts
+Strong languages
+Recommended practice
+13. TEMPLATE MARKETPLACE
+
+Users can:
+
+Download templates
+Sell components
+Share starter kits
+
+Examples:
+
+Portfolio template
+React dashboard
+Login system
+14. TERMINAL SYSTEM
+
+Integrated terminal:
+
+Run commands
+Install packages
+Compile projects
+15. LIVE CODING CLASSROOM
+
+Tutors can:
+
+Teach coding live
+Share execution
+Run collaborative coding sessions
+16. DSA VISUALIZER
+
+Visualize:
+
+Sorting
+Trees
+Graphs
+Recursion
+
+Animated learning system.
+
+17. AI INTERVIEW MODE
+
+AI can:
+
+Ask coding questions
+Evaluate answers
+Conduct mock interviews
+18. OFFLINE IDE MODE
+
+Users can:
+
+Write code offline
+Save locally
+Sync later
+19. IDE THEME PACKS
+
+Downloadable coding themes:
+
+Hacker Neon
+Minimal Dark
+Cyber Grid
+Forest Coding
+Glass AI
+20. UI/UX DESIGN
+
+IDE should feel:
+
+Professional
+Futuristic
+Smooth
+Premium
+
+Like:
+
+VS Code
+Replit
+Cursor AI
+FINAL EXPERIENCE
+
+The IDE should feel like:
+
+“A full AI-powered coding operating system inside the student ecosystem.”
+
+Where users can:
+
+Learn
+Build
+Practice
+Collaborate
+Export
+Teach
+Monetize coding skills
+
+inside one connected platform.
+
+CLASS → SUBJECT → CHAPTER → TOPIC → TEST hierarchy
+
+This creates:
+
+Structured learning
+Easier navigation
+Better AI analytics
+Personalized testing
+Tutor control
+Progress tracking
+
+Add this full system:
+
+ADVANCED COURSE STRUCTURE SYSTEM
+
+Create a fully hierarchical education structure.
+
+COURSE HIERARCHY
+
+Every course should follow:
+
+Class
+
+→ Subject
+→ Chapter
+→ Topic
+→ Subtopic
+→ Quiz/Test
+→ Assignment
+→ Revision
+
+EXAMPLE STRUCTURE
+Class 12
+
+→ Physics
+→ Chapter: Electrostatics
+→ Topic: Coulomb’s Law
+→ Subtopic:
+
+Formula
+Derivation
+Applications
+Numericals
+
+After topic:
+
+Practice questions
+AI quiz
+Revision notes
+Mock test
+MAIN COURSE DASHBOARD
+
+When user opens a course:
+
+Show:
+
+Progress tracker
+Chapters completed
+Pending topics
+Upcoming tests
+AI recommendations
+Focus score
+1. CLASS SECTION
+
+Courses organized by:
+
+Educational Levels
+Class 6–12
+College
+Engineering
+Medical
+UPSC
+Coding
+Skill learning
+CLASS FEATURES
+
+Inside class:
+
+Subject list
+Teacher list
+Study roadmap
+Resources
+Live sessions
+2. SUBJECT SECTION
+
+Each subject has:
+
+Subject Dashboard
+Chapters
+Notes
+Videos
+Tests
+Resources
+Discussion room
+SUBJECT ANALYTICS
+
+Track:
+
+Topic mastery
+Weak concepts
+Study time
+Test performance
+3. CHAPTER SYSTEM
+
+Every chapter contains:
+
+Components
+Introduction
+Concepts
+Videos
+PDFs
+Examples
+Mind maps
+Flashcards
+Coding examples (if coding subject)
+CHAPTER FEATURES
+
+Student can:
+
+Bookmark chapter
+Download resources
+Ask doubts
+Generate AI summary
+4. TOPIC SYSTEM
+
+Each topic is independent.
+
+TOPIC CONTENT
+
+Can include:
+
+Video lecture
+PDF notes
+Whiteboard explanation
+Voice explanation
+Live coding
+Animation
+TOPIC COMPLETION FLOW
+
+After completing topic:
+Automatically unlock:
+
+AI Adaptive Quiz
+
+10 questions:
+
+Easy → Hard
+Personalized difficulty
+Revision Sheet
+
+AI-generated quick notes.
+
+Flashcards
+
+Key concepts.
+
+5. TEST SYSTEM
+
+Very advanced system.
+
+TEST TYPES
+Topic Test
+
+After each topic.
+
+Chapter Test
+
+After chapter completion.
+
+Subject Test
+
+After major units.
+
+Mock Test
+
+Full syllabus.
+
+Live Competitive Test
+
+Realtime contests.
+
+TEST FEATURES
+Timer
+AI anti-cheat
+Randomized questions
+Adaptive difficulty
+Instant results
+Weak-topic analysis
+COPY-PASTE RULES
+
+Disabled in:
+
+Tests
+Coding competitions
+Assessments
+6. TUTOR COURSE MANAGEMENT SYSTEM
+
+Tutors or creators uploading courses get:
+
+“Course Control Panel”
+COURSE CREATION FLOW
+
+Tutor selects:
+
+Step 1
+
+Class/Level
+
+Step 2
+
+Subject
+
+Step 3
+
+Chapter
+
+Step 4
+
+Topics/Subtopics
+
+Step 5
+
+Upload materials
+
+Step 6
+
+Create tests
+
+TUTOR CONTROLS
+
+Tutor can:
+
+Lock/unlock chapters
+Set prerequisites
+Add assignments
+Schedule live sessions
+Create quizzes
+Add coding tasks
+AI COURSE ASSISTANT
+
+Tutor uploads:
+
+Video
+PDF
+Notes
+
+AI automatically creates:
+
+Summaries
+Flashcards
+Topic quizzes
+Revision notes
+Key points
+7. STUDENT PROGRESS SYSTEM
+
+Students can track:
+
+Course Progress
+Completion %
+Topic mastery
+Weak chapters
+Quiz performance
+AI LEARNING ANALYTICS
+
+AI detects:
+
+Slow learning patterns
+Confusing topics
+Attention drops
+
+Then recommends:
+
+Easier revision
+More practice
+Focus sessions
+8. LIVE CLASS INTEGRATION
+
+Each chapter/topic can have:
+
+Live sessions
+Doubt rooms
+Whiteboard discussions
+9. RESOURCE SYSTEM
+
+Every topic/chapter can include:
+
+PDFs
+Mind maps
+Coding examples
+Reels
+Assignments
+10. COMMUNITY DISCUSSION
+
+Each topic has:
+
+Comment section
+Doubt section
+Discussion room
+11. REWARD SYSTEM
+
+Students earn:
+
+Quartz
+XP
+Tier points
+
+for:
+
+Completing chapters
+Passing tests
+Helping others
+12. TUTOR ANALYTICS
+
+Tutors see:
+
+Student completion rates
+Most difficult topics
+Engagement analytics
+Attention heatmaps
+13. SMART RECOMMENDATION ENGINE
+
+AI recommends:
+
+Next topic
+Revision chapter
+Focus areas
+Practice tests
+14. UI/UX DESIGN
+
+Course structure should feel:
+
+Organized
+Smooth
+Modern
+Interactive
+
+Like:
+
+Digital university system
+Premium learning OS
+FINAL EXPERIENCE
+
+Your system should feel like:
+
+“An AI-powered digital education universe.”
+
+BEST FIREBASE FEATURES FOR YOUR APP
+1. FIREBASE AUTHENTICATION
+
+Use for:
+
+Signup/login
+Google login
+OTP login
+Email verification
+
+Perfect for:
+
+Student/tutor roles
+2. FIRESTORE DATABASE
+
+Use for:
+
+Chat messages
+Realtime notifications
+User profiles
+Goals
+Progress tracking
+
+Very good for realtime systems.
+
+3. FIREBASE STORAGE
+
+Use for:
+
+PDFs
+Notes
+Images
+Videos
+Theme packs
+Coding exports
+4. FIREBASE CLOUD MESSAGING
+
+Use for:
+
+Focus reminders
+Study notifications
+Chat notifications
+Goal reminders
+5. FIREBASE REALTIME FEATURES
+
+Perfect for:
+
+Global chat
+Friend chat
+Live updates
+Study rooms
+6. FIREBASE ANALYTICS
+
+Track:
+
+User activity
+Most used features
+Study time
+Retention
+
+IN-APP DOWNLOAD & OFFLINE ACCESS SYSTEM
+
+All downloads must stay inside the app only.
+
+User downloads should NOT directly go to phone/laptop storage by default.
+
+DOWNLOAD LOCATION
+
+Every downloaded item saves inside:
+
+Profile → Store / Downloads
+
+Categories:
+
+Library PDFs
+Course PDFs
+Videos
+Reels
+Coding ZIPs
+AI notes
+Theme packs
+Marketplace assets
+Meeting recordings
+OFFLINE ACCESS
+
+Downloaded files should be available even when user is offline.
+
+User can open inside app:
+
+PDFs
+Notes
+Saved reels
+Course videos
+Coding projects
+Theme packs
+SECURITY RULE
+
+Files should be protected inside app storage.
+
+Add:
+
+Offline cache
+Encrypted local storage
+User login check
+File access permissions
+Optional export button only if allowed
+DOWNLOAD BUTTON FLOW
+
+When user clicks download:
+
+File saves inside app cache/storage
+Entry appears in Profile → Downloads
+User can open offline
+Sync status updates when internet returns
+
+SUBSCRIPTION SYSTEM
+
+Create separate subscription plans for:
+
+Student Plans
+Free
+Basic courses
+Limited downloads
+Limited AI usage
+Basic chat
+Basic library access
+Plus
+More AI questions
+More offline downloads
+Premium library access
+Advanced analytics
+Extra Store storage
+More Quartz rewards
+Pro
+Full AI study assistant
+Unlimited topic quizzes
+Premium theme packs
+Advanced focus assistant
+More coding IDE usage
+Priority support
+Tutor Plans
+Free Tutor
+Basic profile
+Limited course uploads
+Limited students
+Basic analytics
+Tutor Plus
+More course uploads
+More student capacity
+Live class tools
+Assignment system
+Better analytics
+Tutor Pro
+AI course creator
+Advanced student analytics
+Revenue dashboard
+Team management
+Premium club tools
+Priority visibility
+SUBSCRIPTION PAYMENT RULES
+
+Use only:
+
+₹ INR
+
+Do NOT use Quartz for subscriptions.
+
+Quartz can be used for small in-app assets, but subscriptions must use real money.
+
+SUBSCRIPTION BENEFITS
+
+Plans can unlock:
+
+Extra storage
+More downloads
+Premium AI tools
+Premium themes
+Advanced analytics
+More study rooms
+More coding projects
+Higher marketplace visibility
+BILLING OPTIONS
+
+Add:
+
+Monthly plan
+Yearly plan
+Student discount
+Trial period
+Coupon system
+PLAN MANAGEMENT
+
+User can:
+
+Upgrade plan
+Downgrade plan
+Cancel subscription
+View invoices
+Change payment method
+SUBSCRIPTION UI
+
+Create page:
+
+Pricing / Plans
+
+Show:
+
+Plan cards
+Feature comparison
+Recommended plan badge
+₹ pricing
+Upgrade button
+
+CREDIT SYSTEM — COMPLETE APP ECONOMY
+
+Create a separate internal resource called:
+
+“Credits”
+
+Credits are different from:
+
+Quartz
+INR money
+DIFFERENCE BETWEEN SYSTEMS
+System	Purpose
+Quartz	Reward currency / marketplace
+Credits	Premium feature usage
+₹ INR	Real payments/subscriptions
+WHAT CREDITS ARE USED FOR
+
+Credits act like:
+
+“Energy / Access Tokens”
+
+Used for:
+
+AI tools
+Premium generation
+Advanced analytics
+Heavy IDE usage
+AI note generation
+AI quizzes
+AI coding assistant
+Premium exports
+Advanced rendering
+CREDIT TYPES
+1. DAILY FREE CREDITS
+
+Every user gets:
+
+Daily refresh credits
+
+Example:
+
+100 free credits/day
+
+Used for:
+
+Basic AI features
+2. BONUS CREDITS
+
+Earned from:
+
+Goals
+Streaks
+Referrals
+Community contributions
+Tier upgrades
+3. PREMIUM CREDITS
+
+Bought using:
+
+₹ INR
+Subscription plans
+CREDIT CONSUMPTION SYSTEM
+
+Example:
+
+Action	Credits Used
+AI summary	5
+AI quiz generation	10
+AI code explanation	15
+Premium export	20
+AI video analysis	30
+CREDIT REGENERATION SYSTEM
+
+Credits can:
+
+Refresh daily
+Increase with subscriptions
+Increase with tiers
+CREDIT LIMITS
+
+Free users:
+
+Limited AI usage
+
+Premium users:
+
+More credits
+Faster regeneration
+Higher limits
+CREDIT WALLET DASHBOARD
+
+Inside profile show:
+
+Credit Panel
+Current credits
+Daily refill timer
+Usage analytics
+Credit history
+AI PRIORITY SYSTEM
+
+When credits low:
+
+Reduce advanced AI requests
+Suggest recharge/wait
+CREDIT + QUARTZ COMBINATION
+
+Example:
+
+Quartz buys assets
+Credits use AI features
+
+This creates balanced economy.
+
+TUTOR CREDIT SYSTEM
+
+Tutors use credits for:
+
+AI course generation
+Student analytics
+Bulk quiz creation
+AI class summaries
+STUDENT CREDIT SYSTEM
+
+Students use credits for:
+
+AI explanations
+Smart notes
+Coding help
+Adaptive quizzes
+CREDIT EARNING METHODS
+
+Users earn credits from:
+
+Daily login
+Study streak
+Helping community
+Completing goals
+Referral rewards
+Focus sessions
+CREDIT MARKETPLACE (OPTIONAL)
+
+Users can:
+
+Exchange Quartz → Credits
+Buy credit packs
+SUBSCRIPTION INTEGRATION
+
+Subscriptions increase:
+
+Daily credits
+Maximum storage
+AI limits
+TIER BENEFITS
+
+Higher tiers get:
+
+Bonus daily credits
+Faster regeneration
+Premium AI access
+CREDIT SAFETY SYSTEM
+
+Prevent abuse:
+
+Daily limits
+AI spam detection
+Cooldown timers
+UI/UX DESIGN
+
+Credit system should feel:
+
+Clean
+Futuristic
+Energy-based
+
+Use:
+
+Animated bars
+Recharge effects
+AI energy indicators
+FINAL EXPERIENCE
+
+The system should feel like:
+
+“Smart AI energy management.”
+
+Where:
+
+Quartz = rewards/economy
+Credits = AI power/access
+INR = real financial system
+
+BIDDING PLACE SYSTEM — FULL STRUCTURE
+
+Create dedicated section:
+
+“Auction Hub”
+
+Purpose:
+
+Sell rare/high-value assets
+Create competition
+Increase creator earnings
+Gamify marketplace
+WHAT USERS CAN AUCTION
+
+Users can auction:
+
+Educational Assets
+Premium notes
+Handwritten notes
+Exam guides
+Research collections
+Formula sheets
+Coding Assets
+Source code
+Premium templates
+APIs
+Components
+Full projects
+Creative Assets
+UI kits
+Animations
+Thumbnail packs
+Motion graphics
+Theme packs
+Exclusive Content
+Limited tutor resources
+Premium study bundles
+Club memberships
+Live workshop passes
+MAIN AUCTION HOME
+
+When user opens Auction Hub show:
+
+Sections
+Live Auctions
+Ending Soon
+Trending Bids
+Top Sellers
+Rare Assets
+Tutor Auctions
+Coding Auctions
+Creative Auctions
+AUCTION CARD UI
+
+Each auction card shows:
+
+Asset thumbnail
+Current highest bid
+Starting price
+Remaining time
+Total bidders
+Seller name
+Asset category
+BIDDING FLOW
+STEP 1 — CREATE AUCTION
+
+Seller uploads:
+
+Asset
+Description
+Preview
+Minimum bid
+Auction duration
+STEP 2 — USERS BID
+
+Users place bids using:
+
+Quartz
+or
+₹ INR (depending on asset type)
+STEP 3 — LIVE BID UPDATE
+
+Realtime updates:
+
+Highest bidder
+New bids
+Countdown timer
+
+Use:
+
+Firebase realtime
+or
+Socket.io
+STEP 4 — AUCTION END
+
+When timer ends:
+
+Highest bidder wins
+Payment auto-processes
+Asset transfers to winner’s Store
+AUCTION TYPES
+1. STANDARD AUCTION
+
+Highest bid wins.
+
+2. QUICK BUY
+
+User can instantly buy without waiting.
+
+3. SECRET BID
+
+Users cannot see others’ bid amounts.
+
+4. LIMITED DROP
+
+Rare assets released in limited quantity.
+
+PAYMENT RULES
+QUARTZ ALLOWED FOR:
+Notes
+PDFs
+Templates
+Small creator assets
+₹ INR REQUIRED FOR:
+Freelancer services
+Premium tutor workshops
+Large exclusive products
+AUCTION CHAT SYSTEM
+
+Each auction has:
+
+Live discussion
+Q&A
+Buyer-seller chat
+SELLER CONTROLS
+
+Seller can:
+
+Pause auction
+Extend timer
+Set reserve price
+Approve/reject bids (optional)
+BIDDER CONTROLS
+
+Users can:
+
+Watchlist auction
+Auto-bid
+Set max bid
+Receive notifications
+NOTIFICATION SYSTEM
+
+Notify users when:
+
+Outbid
+Auction ending soon
+Auction won
+New rare asset listed
+
+Examples:
+
+“You’ve been outbid on DSA Master Bundle.”
+
+“Auction ending in 5 minutes.”
+
+ANTI-SPAM & SAFETY
+
+Prevent:
+
+Fake bids
+Bot bidding
+Payment fraud
+Asset scams
+
+Use:
+
+Verification
+AI moderation
+Bid cooldowns
+AUCTION ANALYTICS
+
+Show:
+
+Most active auctions
+Highest sold assets
+Top creators
+Bid history
+CREATOR REPUTATION SYSTEM
+
+Creators earn:
+
+Verified Seller
+Trusted Creator
+Elite Seller badges
+STORE INTEGRATION
+
+Winning assets automatically save to:
+
+Profile → Store → Auction Purchases
+
+Available offline if downloadable.
+
+UI/UX DESIGN
+
+Auction Hub should feel:
+
+Exciting
+Premium
+Realtime
+Competitive
+Smooth
+
+Use:
+
+Live countdown animations
+Bid popups
+Animated price changes
+Glow effects
+SPECIAL IDEAS
+“Battle Auctions”
+
+Two creators compete with:
+
+Different note packs
+Coding templates
+Design kits
+
+Users vote/bid.
+
+“Tutor Exclusive Auctions”
+
+Tutors auction:
+
+Private mentoring slots
+Exclusive revision packs
+Limited workshops
+“Tier-Exclusive Auctions”
+
+Only certain tier users can join rare auctions.
+
+FINAL EXPERIENCE
+
+The Auction Hub should feel like:
+
+“A live digital marketplace where knowledge, creativity, and skills become valuable assets.”
+
+Where students and creators can:
+
+Earn
+Trade
+Compete
+Collect premium resources
+Build reputation
+
+inside your educational ecosystem.
+
+GLOBAL CHAT WITH LIMIT SYSTEM
+
+Create a Global Chat where all users can talk, but with smart limits to prevent spam, distraction, and misuse.
+
+GLOBAL CHAT ACCESS
+
+Available for:
+
+Students
+Tutors
+Verified users
+Group members
+
+Global chat should have topic channels:
+
+General
+Study Help
+Coding
+Courses
+Library
+Marketplace
+Mind Arena
+Announcements
+MESSAGE LIMIT SYSTEM
+Free Users
+30 global messages/day
+5 media uploads/day
+Slow mode: 1 message every 20 seconds
+Plus Users
+100 global messages/day
+20 media uploads/day
+Slow mode: 1 message every 8 seconds
+Pro Users
+300 global messages/day
+50 media uploads/day
+Slow mode: 1 message every 3 seconds
+Tutors / Verified Educators
+Higher message limit
+Announcement permission in own communities
+Priority visibility for educational replies
+ANTI-SPAM RULES
+
+Block:
+
+Repeated messages
+Link spam
+Copy-paste flooding
+Abusive words
+Fake promotion
+Scam links
+
+Add:
+
+AI moderation
+Report button
+Auto mute
+Temporary cooldown
+CHAT QUALITY SYSTEM
+
+Helpful messages can earn:
+
+Quartz
+XP
+Reputation points
+
+Low-quality spam can reduce:
+
+Daily chat limit
+Reputation
+Visibility
+GLOBAL CHAT CONTROLS
+
+Users can:
+
+Mute global chat
+Filter channels
+Save useful messages
+Report messages
+Block users
+Mention users with @username
+ADMIN / MODERATOR CONTROLS
+
+Admins can:
+
+Delete messages
+Pin messages
+Mute users
+Ban users
+Lock channels
+Create announcements
+FOCUS MODE RULE
+
+During active study/focus mode:
+
+Global chat notifications should be muted
+Only urgent tutor/study alerts allowed

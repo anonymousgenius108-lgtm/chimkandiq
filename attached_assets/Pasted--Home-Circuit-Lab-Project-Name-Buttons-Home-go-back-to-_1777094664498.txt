@@ -1,0 +1,115 @@
+🏠 Home   >   ⚡ Circuit Lab   >   [Project Name]
+🔘 Buttons:
+🏠 Home → go back to main dashboard
+🔙 Back to Circuit List → previous page
+💾 Save Project
+📤 Share
+▶️ Run Simulation
+
+👉 Smooth switching between pages
+
+🧩 2. Page Structure (Full Layout)
+---------------------------------------------------
+| Navbar: Home | Circuit | Save | Run | Share      |
+---------------------------------------------------
+| 🔍 Search Components | Tabs: Code | Build | Sim  |
+---------------------------------------------------
+| 📦 Component Panel  |   ⚪ Workspace Area        |
+| (Left Sidebar)      |   (Circuit Canvas)        |
+---------------------------------------------------
+| ⚙️ Properties Panel (Right Sidebar)             |
+---------------------------------------------------
+🔄 3. Page Flow (Navigation Logic)
+🏠 From Home:
+Click → “Circuit Lab”
+Opens → Circuit Projects Page
+📁 Circuit Projects Page:
+Create New Circuit
+Open Saved Circuit
+⚡ Circuit Design Page:
+Full editor (your main working page)
+🔙 4. Back Navigation Options
+
+User can:
+
+🔙 Click “Back” → go to circuit list
+🏠 Click “Home” → go to dashboard
+🔄 Auto-save before leaving
+
+👉 No data loss
+
+🧠 5. Tabs System (Core Working Mode)
+🔹 1. Build Tab
+Drag & drop components
+Connect wires
+Design circuit
+🔹 2. Code Tab
+Add code for:
+Arduino
+ESP32
+Code editor with syntax highlighting
+🔹 3. Simulation Tab
+Run circuit
+Show output:
+LED glow
+Motor movement
+Sensor response
+📦 6. Component Panel (Left Side)
+Search bar 🔍
+Categories (your full list)
+Drag & drop components
+⚙️ 7. Properties Panel (Right Side)
+
+When user clicks element:
+
+Example:
+Resistor → change value
+Battery → change voltage
+Sensor → adjust settings
+
+👉 Real-time updates
+
+⚪ 8. Workspace (Center Canvas)
+Infinite white space
+Zoom in/out
+Grid alignment
+Rotate components
+Undo / Redo
+💾 9. Project Management
+Save circuit
+Rename project
+Auto-save
+Open previous projects
+📤 10. Sharing System
+Share circuit link
+Post in feed
+Attach in doubt
+💬 11. Integration with EduConnect
+
+Inside circuit page:
+
+Ask doubt on this circuit
+Comment on design
+Get feedback
+⚡ 12. Quick Action Buttons
+
+Top-right buttons:
+
+▶️ Run Simulation
+⏸️ Stop Simulation
+🔄 Reset Circuit
+📊 13. Status Bar (Bottom)
+
+Shows:
+
+Simulation status
+Errors
+Voltage/current info
+🎯 14. Example Flow
+User clicks “Circuit Lab”
+Opens new project
+Adds components
+Edits values
+Adds code
+Runs simulation
+Saves & shares

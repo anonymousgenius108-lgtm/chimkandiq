@@ -1,0 +1,172 @@
+Create a clear “Creation Permission System” for Student and Tutor roles.
+
+The app must define exactly what a Student can create and what a Tutor can create. Students and Tutors should not have the same creation permissions.
+
+STUDENT CAN CREATE:
+
+Students can create learning, community, and personal productivity content only.
+
+Allow students to create:
+- Personal profile
+- Study goals
+- Tasks and reminders
+- Notes
+- Folders in Store
+- Private study plans
+- Flashcards
+- Mind maps
+- Doubt posts / questions
+- Answers for Q&A contribution
+- Study rooms
+- Private chat rooms
+- Friend groups
+- Group study rooms
+- Coding projects in CodeLab
+- Coding notes
+- Saved snippets
+- AI-generated notes
+- Reels under 4 minutes
+- Educational short videos
+- Marketplace assets such as notes, PDFs, templates, code snippets
+- Auction listings for allowed student assets
+- Lucky Royal rooms for allowed assets
+- Theme packs if creator mode is enabled
+- Personal collections in Library
+- Reading lists
+- Study streak goals
+- Referral links
+- Comments, replies, and discussion posts
+
+STUDENT CANNOT CREATE:
+
+Students must NOT create:
+- Official tutor courses
+- Paid tutor classes
+- Tutor-only live classrooms
+- Student reports
+- Tutor analytics
+- Official certificates
+- Platform-wide announcements
+- Admin tools
+- Other users’ progress reports
+- Subscription plans
+- System-level pricing rules
+
+TUTOR CAN CREATE:
+
+Tutors can create teaching, course, classroom, and monetization content.
+
+Allow tutors to create:
+- Professional tutor profile
+- Courses
+- Classes
+- Subjects
+- Chapters
+- Topics
+- Subtopics
+- Video lectures
+- PDF lessons
+- Study materials
+- Assignments
+- Topic tests
+- Chapter tests
+- Subject tests
+- Mock tests
+- Coding tests
+- AI-generated quizzes
+- Flashcards
+- Revision sheets
+- Certificates
+- Live classes
+- Zoom-style classrooms
+- Private tutor rooms
+- Study groups
+- Course batches
+- Student reports
+- Attendance reports
+- Announcements for own students
+- Tutor clubs
+- Premium clubs
+- Marketplace assets
+- Auction listings
+- Lucky Royal rooms
+- Paid workshops
+- Coding classrooms
+- Live coding sessions
+- Whiteboard sessions
+- Course roadmaps
+- AI course content
+- AI class summaries
+- Resource folders
+- Reels under 4 minutes
+- Educational content series
+- Tutor team roles such as assistant tutor or moderator
+
+TUTOR CANNOT CREATE:
+
+Tutors must NOT create:
+- Admin accounts
+- Platform-wide rules
+- Global subscription plans
+- Student private files
+- Student private chats
+- Student wallet transactions
+- System-level permissions
+- Fake student reports
+- Courses under another tutor’s name
+
+ROLE-BASED CREATION RULE:
+
+If role = student:
+Show only student creation buttons.
+
+If role = tutor:
+Show tutor creation buttons and teaching tools.
+
+If role = admin:
+Show admin creation controls separately.
+
+UI REQUIREMENT:
+
+Every create button must be role-based.
+
+Student dashboard create buttons:
+- Create Note
+- Create Goal
+- Create Study Room
+- Create Group
+- Create Code Project
+- Upload Reel
+- Upload Notes
+- Create Auction
+- Create Lucky Royal Room
+
+Tutor dashboard create buttons:
+- Create Course
+- Create Class
+- Create Subject
+- Create Chapter
+- Create Topic
+- Create Test
+- Create Assignment
+- Start Live Class
+- Create Batch
+- Create Student Report
+- Upload Resource
+- Create Club
+- Create Auction
+- Create Lucky Royal Room
+- Create Certificate
+
+SECURITY REQUIREMENT:
+
+Apply permission checks at:
+1. UI level
+2. Route level
+3. API level
+4. Firebase / database security rules level
+
+Final rule:
+Students create learning and community content.
+Tutors create teaching and course management content.
+Admins create system-level controls.

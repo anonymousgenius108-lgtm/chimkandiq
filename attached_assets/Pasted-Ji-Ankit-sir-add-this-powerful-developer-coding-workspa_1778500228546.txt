@@ -1,0 +1,247 @@
+Ji Ankit sir, add this powerful developer/coding workspace system into your master app prompt:
+
+ADVANCED IDE & CODE WORKSPACE SYSTEM
+
+Create a fully integrated coding environment inside the app where students can write, run, test, save, organize, and export code.
+
+The IDE should feel like a lightweight mix of:
+
+VS Code
+Replit
+CodeSandbox
+Jupyter
+LeetCode playground
+MULTI-LANGUAGE IDE SUPPORT
+
+Allow coding in multiple languages:
+
+Programming Languages
+C
+C++
+Java
+Python
+JavaScript
+TypeScript
+Go
+Rust
+PHP
+Swift
+Kotlin
+SQL
+HTML
+CSS
+React
+Node.js
+
+Optional:
+
+AI/ML notebook support
+Jupyter-style notebooks
+CODE EDITOR FEATURES
+
+Include:
+
+Syntax highlighting
+Auto indentation
+Auto save
+Line numbers
+Bracket matching
+Auto-completion
+Error highlighting
+Code formatting
+Dark/light themes
+Multi-tab editing
+LIVE OUTPUT / PREVIEW SECTION
+
+After writing code:
+
+Users can:
+
+Run code instantly
+See output in preview/output panel
+Open preview in fullscreen
+Debug errors
+WEB DEVELOPMENT PREVIEW
+
+For:
+
+HTML
+CSS
+JavaScript
+React
+Frontend projects
+
+Create live browser preview.
+
+Features:
+
+Split screen mode
+Mobile preview
+Desktop preview
+Responsive testing
+Reload automatically after changes
+PROJECT STRUCTURE SYSTEM
+
+Allow users to create:
+
+Files
+Folders
+Components
+Assets
+Multi-file projects
+
+Example:
+Project/
+├── index.html
+├── style.css
+├── app.js
+
+AI CODING ASSISTANT
+
+Add AI features:
+
+Explain code
+Detect bugs
+Optimize code
+Generate comments
+Convert code language
+Suggest improvements
+Create documentation
+Explain errors simply
+EXPORT SYSTEM
+
+Users can export/download projects as:
+
+ZIP Export
+Download complete project files
+PDF Export
+
+Convert code into:
+
+Beautiful formatted PDF notes
+Syntax-highlighted documentation
+AI NOTES CONVERSION
+
+Create feature:
+
+“Convert Code to Notes”
+
+AI automatically:
+
+Explains code
+Creates theory notes
+Adds comments
+Generates step-by-step explanation
+Creates beginner-friendly documentation
+
+Users can:
+
+Rename notes
+Organize notes
+Save to Store section
+
+Example:
+Python Sorting Algorithm
+→ AI converts into:
+
+Explanation
+Flow
+Time complexity
+Use cases
+Example outputs
+STORE SECTION INTEGRATION
+
+All coding materials automatically save inside:
+
+Profile → Store → Code Workspace
+
+Include:
+
+Projects
+PDFs
+Exported ZIPs
+AI-generated notes
+Saved snippets
+Templates
+CLOUD SAVE SYSTEM
+
+Auto-save coding projects in cloud.
+
+Features:
+
+Restore previous version
+Version history
+Sync across devices
+Backup recovery
+CODING PRACTICE MODE
+
+Add:
+
+Competitive coding mode
+Practice challenges
+Debugging tasks
+Timed coding rounds
+AI difficulty adjustment
+REAL-TIME COLLABORATION
+
+Allow:
+
+Pair programming
+Shared coding rooms
+Live collaboration
+Tutor coding sessions
+Multiplayer code editing
+TERMINAL SYSTEM
+
+Create integrated terminal:
+
+Run commands
+Install packages
+Compile code
+Debug projects
+SECURITY & FAIR USE
+
+In exams/challenges:
+
+Restrict copy-paste
+Detect AI spam code
+Anti-cheat mode
+
+In normal projects:
+
+Full freedom allowed
+UI/UX DESIGN
+
+Design should include:
+
+VS Code style layout
+Sidebar explorer
+Tabs
+Terminal panel
+Output section
+Smooth animations
+Draggable panels
+EDUCATIONAL CODING FEATURES
+
+Add:
+
+DSA visualizer
+Algorithm animation
+Flowchart generator
+Complexity analyzer
+Code execution step visualizer
+FINAL EXPERIENCE
+
+The IDE should feel like:
+
+“A complete coding lab built inside the student ecosystem.”
+
+Where students can:
+
+Learn
+Practice
+Build projects
+Collaborate
+Export work
+Convert coding into study notes
+Store everything in one place.

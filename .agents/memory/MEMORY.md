@@ -1,0 +1,1 @@
+- [RBAC Architecture](rbac-architecture.md) — Three-level RBAC: useAuth hook + route guards + X-User-Role backend middleware; tutor routes return 403 for students.
